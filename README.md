@@ -1,5 +1,7 @@
 # 🍅 Pomodoro Bar
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A native **macOS menu bar app** that brings the **Pomodoro Technique** to your status bar.
 Add tasks, set their duration, start a countdown timer that lives right in the menu bar,
 and let the app handle your breaks — with notifications included.

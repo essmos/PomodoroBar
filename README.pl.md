@@ -1,5 +1,7 @@
 # 🍅 Pomodoro Bar
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Natywna aplikacja **macOS w pasku menu**, która przenosi **metodę Pomodoro** do Twojego paska menu.
 Dodajesz zadania, ustawiasz ich czas trwania, startujesz odliczanie w górnym pasku,
 a przerwami zajmuje się aplikacja — z powiadomieniami.
