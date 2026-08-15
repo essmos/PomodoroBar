@@ -113,4 +113,4 @@ Bez kont, bez śledzenia, bez dostępu do sieci.
 
 ## Licencja
 
-[MIT](LICENSE) © 2025 Grzegorz Szulik
+[MIT](LICENSE) © 2025 essmos

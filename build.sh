@@ -41,7 +41,7 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
     <key>LSUIElement</key>
     <true/>
     <key>NSHumanReadableCopyright</key>
-    <string>© 2025 Grzegorz Szulik — MIT License</string>
+    <string>© 2025 essmos — MIT License</string>
 </dict>
 </plist>
 PLIST

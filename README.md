@@ -112,4 +112,4 @@ no tracking, no network access.
 
 ## License
 
-[MIT](LICENSE) © 2025 Grzegorz Szulik
+[MIT](LICENSE) © 2025 essmos
