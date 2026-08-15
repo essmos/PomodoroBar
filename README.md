@@ -12,6 +12,7 @@ the menu bar.
 ## Features
 
 - 🍅 **Menu bar timer** — counts down from the end of your session (e.g. `🍅 24:59`); the tomato **pulses gently** while the timer runs and shows **⏸** when paused
+- 📊 **Statistics window** — opens a dedicated window with a **Day / Week / Month** selector and a per-task list of time spent (every finished session is recorded)
 - ✅ **Tasks with custom durations** — name, minutes and an optional **description / notes**
 - 🎯 **Session goal per task** — set how many pomodoros a task needs (0 = no limit); progress shows in the header (`· pomodoro 2/4`) and the task gets ✅ when the goal is reached (auto-stops, no break)
 - 📝 **Task note popup** — selecting a task with a note opens a small popup with what you planned to do (auto-dismisses after 12 s)
@@ -81,7 +82,7 @@ page, unzip and move `PomodoroBar.app` to your Applications folder.
 
 ```bash
 ./build.sh
-# produces PomodoroBar.app and dist/PomodoroBar-v1.3.3.zip
+# produces PomodoroBar.app and dist/PomodoroBar-v1.3.5.zip
 ```
 
 ## Usage
@@ -102,7 +103,7 @@ Click the 🍅 icon in the menu bar:
 | 📅 **Daily routine** | Routine tasks, separated by bars. Not done: **bold red TODO**. Done: **green ✅** (auto after ¼ of the time). Click = focus the task. Resets daily |
 | ⚙️ **Settings** | Work / short break / long break durations, **language**, 🚀 **Launch at login**, 🔔 **Sound at session end** |
 | 📋 **Tasks** | All tasks — click to focus (✓). Management at the bottom: `➕ Add task…`, `✏️ Edit selected…`, `🗑 Delete selected…` |
-| 🍅 **Pomodoro Bar · v1.3.3** | Click to open the GitHub repository |
+| 🍅 **Pomodoro Bar · v1.3.5** | Click to open the GitHub repository |
 
 
 ### Quick task

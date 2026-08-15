@@ -57,8 +57,20 @@ struct L10n {
             "settings.shortBreak": "Krótka przerwa",
             "settings.longBreak": "Długa przerwa",
             "settings.language": "🌐 Język",
+            "stats.title": "📊 Statystyki",
+            "stats.today": "Dziś: %@",
+            "stats.week": "Ten tydzień: %@",
+            "stats.month": "Ten miesiąc: %@",
+            "stats.byTask": "Po zadaniach (tydzień):",
+            "stats.empty": "Brak danych — ukończ sesję",
+            "stats.rangeDay": "Dzień",
+            "stats.rangeWeek": "Tydzień",
+            "stats.rangeMonth": "Miesiąc",
+            "stats.total": "Razem: %@",
+            "stats.taskColumn": "Zadanie",
+            "stats.timeColumn": "Czas",
             "settings.sounds": "🔔 Dźwięki na koniec sesji",
-            "info": "🍅 Pomodoro Bar · v1.3.3",
+            "info": "🍅 Pomodoro Bar · v1.3.5",
             "menu.quit": "Zakończ",
             "dialog.addTitle": "Nowe zadanie",
             "dialog.editTitle": "Edytuj zadanie",
@@ -133,8 +145,20 @@ struct L10n {
             "settings.shortBreak": "Short break",
             "settings.longBreak": "Long break",
             "settings.language": "🌐 Language",
+            "stats.title": "📊 Statistics",
+            "stats.today": "Today: %@",
+            "stats.week": "This week: %@",
+            "stats.month": "This month: %@",
+            "stats.byTask": "By task (this week):",
+            "stats.empty": "No data yet — finish a session",
+            "stats.rangeDay": "Day",
+            "stats.rangeWeek": "Week",
+            "stats.rangeMonth": "Month",
+            "stats.total": "Total: %@",
+            "stats.taskColumn": "Task",
+            "stats.timeColumn": "Time",
             "settings.sounds": "🔔 Sound at session end",
-            "info": "🍅 Pomodoro Bar · v1.3.3",
+            "info": "🍅 Pomodoro Bar · v1.3.5",
             "menu.quit": "Quit",
             "dialog.addTitle": "New task",
             "dialog.editTitle": "Edit task",
@@ -209,8 +233,20 @@ struct L10n {
             "settings.shortBreak": "Descanso corto",
             "settings.longBreak": "Descanso largo",
             "settings.language": "🌐 Idioma",
+            "stats.title": "📊 Estadísticas",
+            "stats.today": "Hoy: %@",
+            "stats.week": "Esta semana: %@",
+            "stats.month": "Este mes: %@",
+            "stats.byTask": "Por tarea (esta semana):",
+            "stats.empty": "Sin datos — termina una sesión",
+            "stats.rangeDay": "Día",
+            "stats.rangeWeek": "Semana",
+            "stats.rangeMonth": "Mes",
+            "stats.total": "Total: %@",
+            "stats.taskColumn": "Tarea",
+            "stats.timeColumn": "Tiempo",
             "settings.sounds": "🔔 Sonido al terminar la sesión",
-            "info": "🍅 Pomodoro Bar · v1.3.3",
+            "info": "🍅 Pomodoro Bar · v1.3.5",
             "menu.quit": "Salir",
             "dialog.addTitle": "Nueva tarea",
             "dialog.editTitle": "Editar tarea",
@@ -285,8 +321,20 @@ struct L10n {
             "settings.shortBreak": "Pause courte",
             "settings.longBreak": "Pause longue",
             "settings.language": "🌐 Langue",
+            "stats.title": "📊 Statistiques",
+            "stats.today": "Aujourd'hui : %@",
+            "stats.week": "Cette semaine : %@",
+            "stats.month": "Ce mois-ci : %@",
+            "stats.byTask": "Par tâche (cette semaine) :",
+            "stats.empty": "Pas encore de données — terminez une session",
+            "stats.rangeDay": "Jour",
+            "stats.rangeWeek": "Semaine",
+            "stats.rangeMonth": "Mois",
+            "stats.total": "Total : %@",
+            "stats.taskColumn": "Tâche",
+            "stats.timeColumn": "Temps",
             "settings.sounds": "🔔 Son à la fin de la session",
-            "info": "🍅 Pomodoro Bar · v1.3.3",
+            "info": "🍅 Pomodoro Bar · v1.3.5",
             "menu.quit": "Quitter",
             "dialog.addTitle": "Nouvelle tâche",
             "dialog.editTitle": "Modifier la tâche",
@@ -361,8 +409,20 @@ struct L10n {
             "settings.shortBreak": "Pausa breve",
             "settings.longBreak": "Pausa lunga",
             "settings.language": "🌐 Lingua",
+            "stats.title": "📊 Statistiche",
+            "stats.today": "Oggi: %@",
+            "stats.week": "Questa settimana: %@",
+            "stats.month": "Questo mese: %@",
+            "stats.byTask": "Per attività (questa settimana):",
+            "stats.empty": "Nessun dato — completa una sessione",
+            "stats.rangeDay": "Giorno",
+            "stats.rangeWeek": "Settimana",
+            "stats.rangeMonth": "Mese",
+            "stats.total": "Totale: %@",
+            "stats.taskColumn": "Attività",
+            "stats.timeColumn": "Tempo",
             "settings.sounds": "🔔 Suono a fine sessione",
-            "info": "🍅 Pomodoro Bar · v1.3.3",
+            "info": "🍅 Pomodoro Bar · v1.3.5",
             "menu.quit": "Esci",
             "dialog.addTitle": "Nuova attività",
             "dialog.editTitle": "Modifica attività",
@@ -437,8 +497,20 @@ struct L10n {
             "settings.shortBreak": "استراحة قصيرة",
             "settings.longBreak": "استراحة طويلة",
             "settings.language": "🌐 اللغة",
+            "stats.title": "📊 الإحصائيات",
+            "stats.today": "اليوم: %@",
+            "stats.week": "هذا الأسبوع: %@",
+            "stats.month": "هذا الشهر: %@",
+            "stats.byTask": "حسب المهمة (هذا الأسبوع):",
+            "stats.empty": "لا توجد بيانات بعد — أكمل جلسة",
+            "stats.rangeDay": "يوم",
+            "stats.rangeWeek": "أسبوع",
+            "stats.rangeMonth": "شهر",
+            "stats.total": "الإجمالي: %@",
+            "stats.taskColumn": "المهمة",
+            "stats.timeColumn": "الوقت",
             "settings.sounds": "🔔 صوت عند انتهاء الجلسة",
-            "info": "🍅 بومودورو بار · v1.3.3",
+            "info": "🍅 بومودورو بار · v1.3.5",
             "menu.quit": "إنهاء",
             "dialog.addTitle": "مهمة جديدة",
             "dialog.editTitle": "تعديل المهمة",
@@ -544,6 +616,14 @@ struct Task: Codable {
     }
 }
 
+struct SessionRecord: Codable {
+    var id: UUID
+    var date: String
+    var taskID: UUID
+    var taskName: String
+    var minutes: Int
+}
+
 enum Phase {
     case work
     case shortBreak
@@ -552,7 +632,7 @@ enum Phase {
 
 // MARK: - App Delegate
 
-final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTableViewDataSource, NSTableViewDelegate {
 
     // Persistence keys
     private let defaults = UserDefaults.standard
@@ -566,6 +646,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private let langKey = "pomodoro.language"
     private let routineDateKey = "pomodoro.routineDate"
     private let soundsKey = "pomodoro.sounds"
+    private let historyKey = "pomodoro.history"
 
     private var tasks: [Task] = []
     private var focusTaskID: UUID?
@@ -576,6 +657,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var completedPomodoros = 0
     private var routineDate = ""
     private var soundsEnabled = true
+    private var history: [SessionRecord] = []
 
     // Timer state
     private var phase: Phase = .work
@@ -600,6 +682,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var tasksSubmenu: NSMenu!
     private var editTaskItem: NSMenuItem!
     private var deleteTaskItem: NSMenuItem!
+    private var statsMenuItem: NSMenuItem!
+    private var statsWindow: NSWindow?
+    private var statsTable: NSTableView!
+    private var totalLabel: NSTextField!
+    private var statsData: [(name: String, minutes: Int, sessions: Int)] = []
+    private var statsRange = 0
     private var workSubmenu: NSMenu!
     private var shortSubmenu: NSMenu!
     private var longSubmenu: NSMenu!
@@ -682,6 +770,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         tasksSubmenu = NSMenu()
         tasksMenuItem.submenu = tasksSubmenu
         menu.addItem(tasksMenuItem)
+
+        statsMenuItem = NSMenuItem(title: L10n.t("stats.title"), action: #selector(showStatsWindow), keyEquivalent: "")
+        statsMenuItem.target = self
+        menu.addItem(statsMenuItem)
 
 
 
@@ -824,6 +916,135 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             item.state = (code == L10n.lang) ? .on : .off
             languageSubmenu.addItem(item)
         }
+    }
+
+    // MARK: - Statystyki
+
+    private var weekStartString: String {
+        let cal = Calendar(identifier: .gregorian)
+        let start = cal.startOfDay(for: Date())
+        let weekday = cal.component(.weekday, from: start)
+        let daysSinceMonday = (weekday + 5) % 7
+        let monday = cal.date(byAdding: .day, value: -daysSinceMonday, to: start) ?? start
+        return Self.dateString(monday)
+    }
+
+    private var monthPrefix: String {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy-MM"
+        return f.string(from: Date())
+    }
+
+    private func formatMinutes(_ m: Int) -> String {
+        if m < 60 { return "\(m) min" }
+        let h = m / 60
+        let rem = m % 60
+        if rem == 0 { return "\(h) h" }
+        return "\(h) h \(rem) min"
+    }
+
+    @objc private func showStatsWindow() {
+        if let w = statsWindow {
+            refreshStatsWindow()
+            w.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            return
+        }
+
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 520, height: 380),
+                              styleMask: [.titled, .closable, .resizable],
+                              backing: .buffered, defer: false)
+        window.title = L10n.t("stats.title")
+        window.isReleasedWhenClosed = false
+        window.center()
+
+        let content = NSView(frame: NSRect(x: 0, y: 0, width: 520, height: 380))
+        window.contentView = content
+
+        let seg = NSSegmentedControl(labels: [L10n.t("stats.rangeDay"), L10n.t("stats.rangeWeek"), L10n.t("stats.rangeMonth")],
+                                     trackingMode: .selectOne, target: self, action: #selector(statsRangeChanged(_:)))
+        seg.selectedSegment = statsRange
+        seg.frame = NSRect(x: 16, y: 344, width: 300, height: 24)
+        content.addSubview(seg)
+
+        totalLabel = NSTextField(labelWithString: "")
+        totalLabel.frame = NSRect(x: 330, y: 348, width: 174, height: 18)
+        totalLabel.alignment = .right
+        totalLabel.font = .systemFont(ofSize: 13, weight: .semibold)
+        content.addSubview(totalLabel)
+
+        let scroll = NSScrollView(frame: NSRect(x: 16, y: 16, width: 488, height: 316))
+        scroll.hasVerticalScroller = true
+        scroll.borderType = .bezelBorder
+        scroll.autohidesScrollers = true
+
+        let table = NSTableView(frame: NSRect(x: 0, y: 0, width: 488, height: 316))
+        let colTask = NSTableColumn(identifier: NSUserInterfaceItemIdentifier("task"))
+        colTask.title = L10n.t("stats.taskColumn")
+        colTask.width = 350
+        table.addTableColumn(colTask)
+        let colTime = NSTableColumn(identifier: NSUserInterfaceItemIdentifier("time"))
+        colTime.title = L10n.t("stats.timeColumn")
+        colTime.width = 120
+        table.addTableColumn(colTime)
+        table.usesAlternatingRowBackgroundColors = true
+        table.delegate = self
+        table.dataSource = self
+        scroll.documentView = table
+        content.addSubview(scroll)
+
+        statsTable = table
+        statsWindow = window
+        refreshStatsWindow()
+        window.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
+    @objc private func statsRangeChanged(_ sender: NSSegmentedControl) {
+        statsRange = sender.selectedSegment
+        refreshStatsWindow()
+    }
+
+    private func refreshStatsWindow() {
+        var records: [SessionRecord]
+        switch statsRange {
+        case 0:
+            records = history.filter { $0.date == Self.dateString(Date()) }
+        case 1:
+            records = history.filter { $0.date >= weekStartString }
+        default:
+            records = history.filter { $0.date.hasPrefix(monthPrefix) }
+        }
+        let grouped = Dictionary(grouping: records, by: { $0.taskName })
+        statsData = grouped.map { (name: $0.key, minutes: $0.value.reduce(0) { $0 + $1.minutes }, sessions: $0.value.count) }
+            .sorted { $0.minutes > $1.minutes }
+        let total = statsData.reduce(0) { $0 + $1.minutes }
+        totalLabel?.stringValue = L10n.t("stats.total", formatMinutes(total))
+        statsTable?.reloadData()
+    }
+
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        statsData.count
+    }
+
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        guard row < statsData.count else { return nil }
+        let colID = tableColumn?.identifier.rawValue ?? "task"
+        let reuseID = NSUserInterfaceItemIdentifier(colID)
+        var cell = tableView.makeView(withIdentifier: reuseID, owner: self) as? NSTextField
+        if cell == nil {
+            cell = NSTextField(labelWithString: "")
+            cell?.identifier = reuseID
+        }
+        let item = statsData[row]
+        if colID == "time" {
+            cell?.stringValue = formatMinutes(item.minutes)
+            cell?.alignment = .right
+        } else {
+            cell?.stringValue = "🍅 \(item.name) · \(item.sessions)×"
+            cell?.alignment = .left
+        }
+        return cell
     }
 
     // MARK: - Codzienna rutyna
@@ -1558,6 +1779,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             completedPomodoros += 1
             defaults.set(completedPomodoros, forKey: pomodorosKey)
 
+            if let id = focusTaskID {
+                let rec = SessionRecord(id: UUID(), date: Self.dateString(Date()),
+                                        taskID: id, taskName: focusTaskName,
+                                        minutes: focusTaskMinutes)
+                history.append(rec)
+                if history.count > 1000 {
+                    history.removeFirst(history.count - 1000)
+                }
+                if let data = try? JSONEncoder().encode(history) {
+                    defaults.set(data, forKey: historyKey)
+                }
+            }
+
             var taskDone = false
             if let id = focusTaskID, let idx = tasks.firstIndex(where: { $0.id == id }) {
                 tasks[idx].completedSessions += 1
@@ -1688,6 +1922,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
         routineDate = defaults.string(forKey: routineDateKey) ?? ""
         soundsEnabled = defaults.object(forKey: soundsKey) as? Bool ?? true
+        if let data = defaults.data(forKey: historyKey),
+           let decoded = try? JSONDecoder().decode([SessionRecord].self, from: data) {
+            history = decoded
+        }
         workMinutes = defaults.integer(forKey: workKey) > 0 ? defaults.integer(forKey: workKey) : 25
         shortBreakMinutes = defaults.integer(forKey: shortKey) > 0 ? defaults.integer(forKey: shortKey) : 5
         longBreakMinutes = defaults.integer(forKey: longKey) > 0 ? defaults.integer(forKey: longKey) : 15
