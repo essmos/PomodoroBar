@@ -66,8 +66,9 @@ tomato-shaped kitchen timer while studying.
 
 ## Install
 
-Download the latest release zip from the [Releases](https://github.com/essmos/PomodoroBar/releases)
-page, unzip and move `PomodoroBar.app` to your Applications folder.
+Download the latest release from the [Releases](https://github.com/essmos/PomodoroBar/releases)
+page — either the **`.dmg`** (open it and drag `PomodoroBar.app` onto the **Applications** shortcut)
+or the **`.zip`** (unzip and move the app to your Applications folder).
 
 > **First launch warning — "Apple could not verify ..."** is expected. The app is
 > **ad-hoc signed** (no paid Apple Developer ID, for privacy — no personal name in the

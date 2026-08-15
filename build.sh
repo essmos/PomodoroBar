@@ -81,6 +81,17 @@ echo "==> Packaging zip..."
 ditto -c -k --keepParent "$APP" "$DIST/PomodoroBar-v${VERSION}.zip"
 shasum -a 256 "$DIST/PomodoroBar-v${VERSION}.zip" | tee "$DIST/PomodoroBar-v${VERSION}.zip.sha256"
 
+echo "==> Creating DMG..."
+STAGING=".dmg-staging"
+rm -rf "$STAGING"
+mkdir -p "$STAGING"
+cp -R "$APP" "$STAGING/"
+ln -s /Applications "$STAGING/Applications"
+hdiutil create -volname "Pomodoro Bar" -srcfolder "$STAGING" -ov -format UDZO "$DIST/PomodoroBar-v${VERSION}.dmg" >/dev/null 2>&1
+rm -rf "$STAGING"
+echo "    DMG: $DIST/PomodoroBar-v${VERSION}.dmg"
+
+
 echo ""
 echo "==> Done:"
 echo "    App bundle: $APP"

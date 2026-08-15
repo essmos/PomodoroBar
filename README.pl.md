@@ -66,8 +66,9 @@ kuchennego minutnika w kształcie pomidora podczas nauki.
 
 ## Instalacja
 
-Pobierz zip z ostatniego release'a ze strony [Releases](https://github.com/essmos/PomodoroBar/releases),
-rozpakuj i przeciągnij `PomodoroBar.app` do folderu Aplikacje.
+Pobierz z ostatniego release'a ze strony [Releases](https://github.com/essmos/PomodoroBar/releases) —
+albo **`.dmg`** (otwórz i przeciągnij `PomodoroBar.app` na skrót **Aplikacje**), albo **`.zip`**
+(rozpakuj i przenieś aplikację do folderu Aplikacje).
 
 > **Ostrzeżenie przy pierwszym uruchomieniu — „Apple nie mogło zweryfikować..."** jest
 > normalne. Aplikacja jest **podpisana ad-hoc** (bez płatnego Apple Developer ID — dla
