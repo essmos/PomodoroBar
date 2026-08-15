@@ -65,9 +65,14 @@ kuchennego minutnika w kształcie pomidora podczas nauki.
 Pobierz zip z ostatniego release'a ze strony [Releases](https://github.com/essmos/PomodoroBar/releases),
 rozpakuj i przeciągnij `PomodoroBar.app` do folderu Aplikacje.
 
-> Aplikacja jest podpisana ad-hoc (bez notaryzacji). Jeśli macOS zablokuje ją przy pierwszym
-> otwarciu: kliknij prawym przyciskiem → **Otwórz**, albo uruchom
-> `xattr -dr com.apple.quarantine PomodoroBar.app`.
+> **Ostrzeżenie przy pierwszym uruchomieniu — „Apple nie mogło zweryfikować..."** jest
+> normalne. Aplikacja jest **podpisana ad-hoc** (bez płatnego Apple Developer ID — dla
+> prywatności, bez danych osobowych w sygnaturze), więc macOS nie może potwierdzić
+> dewelopera. Aplikacja jest bezpieczna i w 100 % lokalna. Jak ją otworzyć:
+>
+> 1. Kliknij `PomodoroBar.app` prawym przyciskiem → **Otwórz** → **Otwórz** (jednorazowo), albo
+> 2. Ustawienia systemowe → Prywatność i bezpieczeństwo → **Otwórz mimo to**, albo
+> 3. Terminal: `xattr -dr com.apple.quarantine PomodoroBar.app`
 
 **Autostart:** w aplikacji zaznacz ⚙️ Ustawienia → 🚀 Uruchamiaj przy logowaniu (macOS wymaga, by aplikacja leżała w folderze /Applications).
 

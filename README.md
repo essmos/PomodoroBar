@@ -65,8 +65,14 @@ tomato-shaped kitchen timer while studying.
 Download the latest release zip from the [Releases](https://github.com/essmos/PomodoroBar/releases)
 page, unzip and move `PomodoroBar.app` to your Applications folder.
 
-> The app is ad-hoc signed (not notarized). If macOS blocks it on first launch:
-> right-click → **Open**, or run `xattr -dr com.apple.quarantine PomodoroBar.app`.
+> **First launch warning — "Apple could not verify ..."** is expected. The app is
+> **ad-hoc signed** (no paid Apple Developer ID, for privacy — no personal name in the
+> signature), so macOS can't verify the developer. The app is safe and 100 % local.
+> To open it:
+>
+> 1. Right-click `PomodoroBar.app` → **Open** → **Open** (one-time), or
+> 2. System Settings → Privacy & Security → **Open Anyway**, or
+> 3. Terminal: `xattr -dr com.apple.quarantine PomodoroBar.app`
 
 **Launch at login:** in the app, tick ⚙️ Settings → 🚀 Launch at login (macOS requires the app to live in /Applications).
 
