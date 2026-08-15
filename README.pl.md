@@ -13,6 +13,7 @@ w pasku menu.
 
 - 🍅 **Timer w pasku menu** — odlicza w dół od końca sesji (np. `🍅 24:59`); pomidor **delikatnie pulsuje**, gdy timer działa, a przy pauzie pokazuje **⏸**
 - ✅ **Zadania z własnym czasem** — nazwa, minuty i opcjonalny **opis / notatka**
+- 🎯 **Limit sesji na zadanie** — ustawiasz, ile pomodoros potrzebuje zadanie (0 = bez limitu); postęp widać w nagłówku (`· pomodoro 2/4`), a po osiągnięciu limitu zadanie dostaje ✅ (auto-stop, bez przerwy)
 - 📝 **Popup z opisem zadania** — wybranie zadania z notatką otwiera okienko z planem (znika samo po 12 s)
 - ▶️ **Start / Pauza / Wznów / Stop** — pełna kontrola sesji
 - ⚡ **Szybkie zadanie** — input w menu: wpisujesz nazwę, ustawiasz minuty i klikasz Start (bez okna dialogowego)
@@ -21,7 +22,7 @@ w pasku menu.
 - 🚀 **Uruchamianie przy logowaniu** — opcjonalnie, jedno kliknięcie w Ustawieniach
 - 🔗 **About → GitHub** — kliknięcie informacji o aplikacji otwiera repozytorium
 - ⏱️ **Wydłużanie sesji** — przyciski stepper `− 5 min +` / `− 10 min +` (przy pracy zmieniają czas zadania, przy przerwie tylko bieżącą przerwę)
-- ☕ **Automatyczne przerwy** — krótka po każdym pomodoro, długa po co 4. (obie odliczane w dół, z powiadomieniami)
+- ☕ **Przerwy na Twoich zasadach** — po każdym pomodoro aplikacja pyta: **przerwa / nowe zadanie / kontynuuj** (długa przerwa automatycznie co 4.)
 - 🔔 **Dźwięki i powiadomienia** — dedykowany dzwonek na koniec każdej sesji (przełącznik w Ustawieniach) oraz powiadomienia systemowe
 - 🌐 **6 języków** — Polski · English · Español · Français · العربية · Italiano (wykrywany automatycznie, do zmiany w Ustawieniach)
 - 💾 **W pełni lokalnie** — zadania, notatki i ustawienia zapisują się między restartami
@@ -51,7 +52,7 @@ kuchennego minutnika w kształcie pomidora podczas nauki.
 ### W tej aplikacji
 
 - Każde **zadanie ma własny czas** (1–480 min, domyślnie 25) — zmieści się i 50-minutowe zanurzenie, i 10-minutowy szybki task.
-- Timer **odlicza w dół** w pasku menu; na zero aplikacja powiadamia i **sama włącza przerwę** (5 min krótką, 15 min długą co 4. pomodoro).
+- Timer **odlicza w dół** w pasku menu; na zero aplikacja pyta, co dalej: **☕ przerwa** (5 min, 15 min co 4.), **📋 nowe zadanie** albo **▶ kontynuuj** to samo zadanie.
 - Po przerwie automatycznie wraca do pracy. Możesz pominąć przerwę (`✋ Zakończ przerwę`) albo zatrzymać wszystko (`⏹ Stop`).
 - Kończy Ci się czas? Kliknij steppery `− 5 min +` / `− 10 min +` — czas zadania się wydłuża, a odliczanie dopasowuje.
 
@@ -80,7 +81,7 @@ rozpakuj i przeciągnij `PomodoroBar.app` do folderu Aplikacje.
 
 ```bash
 ./build.sh
-# tworzy PomodoroBar.app oraz dist/PomodoroBar-v1.3.1.zip
+# tworzy PomodoroBar.app oraz dist/PomodoroBar-v1.3.3.zip
 ```
 
 ## Obsługa
@@ -101,7 +102,7 @@ Kliknij ikonę 🍅 w pasku menu:
 | 📅 **Codzienna rutyna** | Zadania rutyny, oddzielone belkami. Niezrobione: **pogrubione na czerwono TODO**. Zrobione: **zielone ✅** (automatycznie po ¼ czasu). Klik = focus zadania. Reset co dzień |
 | ⚙️ **Ustawienia** | Czas pracy / przerw, **język**, 🚀 **Uruchamiaj przy logowaniu**, 🔔 **Dźwięki na koniec sesji** |
 | 📋 **Zadania** | Wszystkie zadania — klik = focus (✓). Zarządzanie na dole: „➕ Dodaj zadanie…", „✏️ Edytuj wybrane…", „🗑 Usuń wybrane…" |
-| 🍅 **Pomodoro Bar · v1.3.1** | Klik = otwarcie repozytorium GitHub |
+| 🍅 **Pomodoro Bar · v1.3.3** | Klik = otwarcie repozytorium GitHub |
 
 
 ### Szybkie zadanie
