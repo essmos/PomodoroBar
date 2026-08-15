@@ -15,10 +15,14 @@ the menu bar.
 - ✅ **Tasks with custom durations** — name, minutes and an optional **description / notes**
 - 📝 **Task note popup** — selecting a task with a note opens a small popup with what you planned to do (auto-dismisses after 12 s)
 - ▶️ **Start / Pause / Resume / Stop** — full session control
+- ⚡ **Quick task** — inline input in the menu: type a name, set minutes, hit Start (no dialog needed)
 - 🕘 **Recent tasks** — the last 10 used tasks for one-click focus switching
-- ⏱️ **Extend session** — `+5 / +10 / −5 / −10 min` buttons (updates the task duration while working, or the current break)
+- 📅 **Daily routine** — mark any task as a daily to-do (checkbox in add/edit); unfinished items show **bold red with a TODO marker** in their own section, turn **green ✅** automatically after ¼ of the task time, and reset every day
+- 🚀 **Launch at login** — optional, one click in Settings
+- 🔗 **About → GitHub** — click the app info at the bottom of the menu to open the repository
+- ⏱️ **Extend session** — `− 5 min +` / `− 10 min +` stepper buttons (updates the task duration while working, or the current break)
 - ☕ **Automatic breaks** — short break after each pomodoro, long break after every 4th (both count down, with notifications)
-- 🔔 **System notifications** — pomodoro and break endings (beep fallback if notifications are off)
+- 🔔 **Sounds & notifications** — dedicated chime at every session end (toggle in Settings) plus system notifications
 - 🌐 **6 languages** — Polski · English · Español · Français · العربية · Italiano (auto-detected, switchable in Settings)
 - 💾 **Fully local** — tasks, notes and settings persist across restarts
 - 🚫 No Dock icon, no accounts, no tracking
@@ -49,7 +53,7 @@ tomato-shaped kitchen timer while studying.
 - Each **task has its own duration** (1–480 minutes, default 25) — a 50-minute deep dive or a 10-minute quickie both fit.
 - The timer **counts down** in the menu bar; at zero the app notifies you and **automatically starts the break** (5 min short, 15 min long every 4th pomodoro).
 - After the break it returns to work automatically. You can skip a break (`✋ End break`) or stop completely (`⏹ Stop`).
-- Running out of time mid-session? Hit `+5 / +10 min` — the task's duration grows and the countdown adjusts.
+- Running out of time mid-session? Hit the `− 5 min +` / `− 10 min +` steppers — the task's duration grows and the countdown adjusts.
 
 ## Requirements
 
@@ -64,13 +68,13 @@ page, unzip and move `PomodoroBar.app` to your Applications folder.
 > The app is ad-hoc signed (not notarized). If macOS blocks it on first launch:
 > right-click → **Open**, or run `xattr -dr com.apple.quarantine PomodoroBar.app`.
 
-**Launch at login:** System Settings → General → Login Items → add `PomodoroBar.app`.
+**Launch at login:** in the app, tick ⚙️ Settings → 🚀 Launch at login (macOS requires the app to live in /Applications).
 
 ## Build from source
 
 ```bash
 ./build.sh
-# produces PomodoroBar.app and dist/PomodoroBar-v1.2.0.zip
+# produces PomodoroBar.app and dist/PomodoroBar-v1.3.0.zip
 ```
 
 ## Usage
@@ -82,15 +86,25 @@ Click the 🍅 icon in the menu bar:
 | 🍅 **Focus: *task*** | Header — currently focused task (or the break in progress) |
 | **Remaining: 24:59 / 25:00** | Countdown and total session duration |
 | **Elapsed: 00:01** | Time since the session started |
+| ⚡ **Quick task** | Inline input: name + minutes + ▶ Start — creates the task and starts it immediately |
 | ▶ **Start / ⏸ Pause** | Start, pause or resume the timer |
 | ⏹ **Stop** | Stop and reset the session |
 | ✋ **End break** | Skip the current break (visible during breaks) |
-| ⏱️ **+5 / +10 / −5 / −10 min** | Extend or shorten the current session |
+| ⏱️ **− 5 min +** / **− 10 min +** | Stepper buttons — extend or shorten the session (click repeatedly, the menu stays open) |
 | 🕘 **Recent:** | 10 most recently used tasks — one click to focus |
-| 📋 **Tasks** | All tasks — click to focus (✓). `➕ Add task…` at the bottom |
-| ✏️ **Edit selected…** | Change name, duration or description |
-| 🗑 **Delete selected…** | Remove the focused task |
-| ⚙️ **Settings** | Work / short break / long break durations, and **language** |
+| 📅 **Daily routine** | Routine tasks, separated by bars. Not done: **bold red TODO**. Done: **green ✅** (auto after ¼ of the time). Click = focus the task. Resets daily |
+| ⚙️ **Settings** | Work / short break / long break durations, **language**, 🚀 **Launch at login**, 🔔 **Sound at session end** |
+| 📋 **Tasks** | All tasks — click to focus (✓). Management at the bottom: `➕ Add task…`, `✏️ Edit selected…`, `🗑 Delete selected…` |
+| 🍅 **Pomodoro Bar · v1.3** | Click to open the GitHub repository |
+
+
+### Quick task
+
+Type a name in the ⚡ field at the top of the menu, set the minutes and press **▶ Start** — the task is created, focused and the timer starts immediately. Ideal for short or rarely repeated tasks.
+
+### Daily routine
+
+Tick **“This is part of my daily routine”** when adding/editing a task. Routine tasks get their own section between separators: **bold red `⬜ TODO`** when not done, **green `✅`** when done. They turn green automatically after you've worked **¼ of the task's time** on them, and reset every day. Routine tasks also stay in the Tasks list with a 📅 marker.
 
 ### Task notes
 

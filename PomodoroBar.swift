@@ -1,5 +1,6 @@
 import AppKit
 import UserNotifications
+import ServiceManagement
 
 // MARK: - Localization (pl, en, es, fr, ar, it)
 
@@ -55,7 +56,8 @@ struct L10n {
             "settings.shortBreak": "Krótka przerwa",
             "settings.longBreak": "Długa przerwa",
             "settings.language": "🌐 Język",
-            "info": "🍅 Pomodoro Bar · v1.2",
+            "settings.sounds": "🔔 Dźwięki na koniec sesji",
+            "info": "🍅 Pomodoro Bar · v1.3",
             "menu.quit": "Zakończ",
             "dialog.addTitle": "Nowe zadanie",
             "dialog.editTitle": "Edytuj zadanie",
@@ -68,6 +70,8 @@ struct L10n {
             "dialog.minutesLabel": "Czas trwania (min):",
             "dialog.minutesPlaceholder": "np. 25",
             "dialog.noteLabel": "Opis / notatka (opcjonalnie):",
+            "dialog.routineCheck": "To moja codzienna rutyna (TODO na dziś)",
+            "quick.placeholder": "Nazwa zadania…",
             "dialog.noTaskTitle": "Brak wybranego zadania",
             "dialog.noTaskInfo": "Najpierw wybierz zadanie z listy 📋 Zadania.",
             "dialog.deleteTitle": "Usunąć zadanie „%@”?",
@@ -78,6 +82,20 @@ struct L10n {
             "notif.breakStart.long": "Czas na długą przerwę. 💪",
             "notif.breakDone": "☕ Przerwa zakończona",
             "notif.breakDoneBody": "Wracaj do pracy — kolejny pomodoro!",
+            "routine.title": "📅 Codzienna rutyna",
+            "routine.progress": "Rutyna: %d/%d wykonane",
+            "routine.todoPrefix": "TODO ",
+            "routine.add": "➕ Dodaj do rutyny…",
+            "routine.empty": "Brak zadań w rutynie — oznacz zadanie jako codzienną rutynę",
+            "routine.markDone": "✓ Oznacz jako wykonane",
+            "routine.unmark": "↩ Cofnij",
+            "routine.focus": "▶ Skup się na tym zadaniu",
+            "routine.delete": "🗑 Usuń",
+            "routine.deleteTitle": "Usunąć element rutyny „%@”?",
+            "routine.deleteInfo": "Zostanie usunięty z codziennej rutyny.",
+            "autostart.title": "🚀 Uruchamiaj przy logowaniu",
+            "autostart.error": "Nie udało się zmienić uruchamiania przy logowaniu: %@",
+            "about.github": "Otwórz repozytorium GitHub",
         ],
         "en": [
             "focus.work": "🍅 Focus: %@ (%d min)",
@@ -104,7 +122,8 @@ struct L10n {
             "settings.shortBreak": "Short break",
             "settings.longBreak": "Long break",
             "settings.language": "🌐 Language",
-            "info": "🍅 Pomodoro Bar · v1.2",
+            "settings.sounds": "🔔 Sound at session end",
+            "info": "🍅 Pomodoro Bar · v1.3",
             "menu.quit": "Quit",
             "dialog.addTitle": "New task",
             "dialog.editTitle": "Edit task",
@@ -117,6 +136,8 @@ struct L10n {
             "dialog.minutesLabel": "Duration (minutes):",
             "dialog.minutesPlaceholder": "e.g. 25",
             "dialog.noteLabel": "Description / notes (optional):",
+            "dialog.routineCheck": "This is part of my daily routine",
+            "quick.placeholder": "Task name…",
             "dialog.noTaskTitle": "No task selected",
             "dialog.noTaskInfo": "Select a task from the 📋 Tasks list first.",
             "dialog.deleteTitle": "Delete task “%@”?",
@@ -127,6 +148,20 @@ struct L10n {
             "notif.breakStart.long": "Time for a long break. 💪",
             "notif.breakDone": "☕ Break finished",
             "notif.breakDoneBody": "Back to work — next pomodoro!",
+            "routine.title": "📅 Daily routine",
+            "routine.progress": "Routine: %d/%d done",
+            "routine.todoPrefix": "TODO ",
+            "routine.add": "➕ Add to routine…",
+            "routine.empty": "No routine tasks yet — mark a task as your daily routine",
+            "routine.markDone": "✓ Mark as done",
+            "routine.unmark": "↩ Unmark",
+            "routine.focus": "▶ Focus this task",
+            "routine.delete": "🗑 Delete",
+            "routine.deleteTitle": "Delete routine item “%@”?",
+            "routine.deleteInfo": "It will be removed from your daily routine.",
+            "autostart.title": "🚀 Launch at login",
+            "autostart.error": "Could not change launch-at-login: %@",
+            "about.github": "Open the GitHub repository",
         ],
         "es": [
             "focus.work": "🍅 Enfoque: %@ (%d min)",
@@ -153,7 +188,8 @@ struct L10n {
             "settings.shortBreak": "Descanso corto",
             "settings.longBreak": "Descanso largo",
             "settings.language": "🌐 Idioma",
-            "info": "🍅 Pomodoro Bar · v1.2",
+            "settings.sounds": "🔔 Sonido al terminar la sesión",
+            "info": "🍅 Pomodoro Bar · v1.3",
             "menu.quit": "Salir",
             "dialog.addTitle": "Nueva tarea",
             "dialog.editTitle": "Editar tarea",
@@ -166,6 +202,8 @@ struct L10n {
             "dialog.minutesLabel": "Duración (minutos):",
             "dialog.minutesPlaceholder": "p. ej. 25",
             "dialog.noteLabel": "Descripción / notas (opcional):",
+            "dialog.routineCheck": "Es parte de mi rutina diaria",
+            "quick.placeholder": "Nombre de la tarea…",
             "dialog.noTaskTitle": "No hay tarea seleccionada",
             "dialog.noTaskInfo": "Selecciona primero una tarea de la lista 📋 Tareas.",
             "dialog.deleteTitle": "¿Eliminar la tarea “%@”?",
@@ -176,6 +214,20 @@ struct L10n {
             "notif.breakStart.long": "¡Hora de un descanso largo! 💪",
             "notif.breakDone": "☕ Descanso terminado",
             "notif.breakDoneBody": "¡De vuelta al trabajo — siguiente pomodoro!",
+            "routine.title": "📅 Rutina diaria",
+            "routine.progress": "Rutina: %d/%d hechas",
+            "routine.todoPrefix": "TODO ",
+            "routine.add": "➕ Añadir a la rutina…",
+            "routine.empty": "Sin elementos — añade el primero",
+            "routine.markDone": "✓ Marcar como hecha",
+            "routine.unmark": "↩ Desmarcar",
+            "routine.focus": "▶ Enfocar esta tarea",
+            "routine.delete": "🗑 Eliminar",
+            "routine.deleteTitle": "¿Eliminar el elemento “%@” de la rutina?",
+            "routine.deleteInfo": "Se eliminará de tu rutina diaria.",
+            "autostart.title": "🚀 Iniciar al iniciar sesión",
+            "autostart.error": "No se pudo cambiar el inicio al iniciar sesión: %@",
+            "about.github": "Abrir el repositorio de GitHub",
         ],
         "fr": [
             "focus.work": "🍅 Focus : %@ (%d min)",
@@ -202,7 +254,8 @@ struct L10n {
             "settings.shortBreak": "Pause courte",
             "settings.longBreak": "Pause longue",
             "settings.language": "🌐 Langue",
-            "info": "🍅 Pomodoro Bar · v1.2",
+            "settings.sounds": "🔔 Son à la fin de la session",
+            "info": "🍅 Pomodoro Bar · v1.3",
             "menu.quit": "Quitter",
             "dialog.addTitle": "Nouvelle tâche",
             "dialog.editTitle": "Modifier la tâche",
@@ -215,6 +268,8 @@ struct L10n {
             "dialog.minutesLabel": "Durée (minutes) :",
             "dialog.minutesPlaceholder": "ex. 25",
             "dialog.noteLabel": "Description / notes (facultatif) :",
+            "dialog.routineCheck": "Fait partie de ma routine quotidienne",
+            "quick.placeholder": "Nom de la tâche…",
             "dialog.noTaskTitle": "Aucune tâche sélectionnée",
             "dialog.noTaskInfo": "Sélectionnez d'abord une tâche dans la liste 📋 Tâches.",
             "dialog.deleteTitle": "Supprimer la tâche « %@ » ?",
@@ -225,6 +280,20 @@ struct L10n {
             "notif.breakStart.long": "C'est l'heure d'une pause longue. 💪",
             "notif.breakDone": "☕ Pause terminée",
             "notif.breakDoneBody": "Retour au travail — prochain pomodoro !",
+            "routine.title": "📅 Routine quotidienne",
+            "routine.progress": "Routine : %d/%d terminées",
+            "routine.todoPrefix": "TODO ",
+            "routine.add": "➕ Ajouter à la routine…",
+            "routine.empty": "Aucun élément — ajoutez le premier",
+            "routine.markDone": "✓ Marquer comme terminée",
+            "routine.unmark": "↩ Annuler",
+            "routine.focus": "▶ Se concentrer sur cette tâche",
+            "routine.delete": "🗑 Supprimer",
+            "routine.deleteTitle": "Supprimer l'élément « %@ » de la routine ?",
+            "routine.deleteInfo": "Il sera retiré de votre routine quotidienne.",
+            "autostart.title": "🚀 Lancer à la connexion",
+            "autostart.error": "Impossible de modifier le lancement à la connexion : %@",
+            "about.github": "Ouvrir le dépôt GitHub",
         ],
         "it": [
             "focus.work": "🍅 Focus: %@ (%d min)",
@@ -251,7 +320,8 @@ struct L10n {
             "settings.shortBreak": "Pausa breve",
             "settings.longBreak": "Pausa lunga",
             "settings.language": "🌐 Lingua",
-            "info": "🍅 Pomodoro Bar · v1.2",
+            "settings.sounds": "🔔 Suono a fine sessione",
+            "info": "🍅 Pomodoro Bar · v1.3",
             "menu.quit": "Esci",
             "dialog.addTitle": "Nuova attività",
             "dialog.editTitle": "Modifica attività",
@@ -264,6 +334,8 @@ struct L10n {
             "dialog.minutesLabel": "Durata (minuti):",
             "dialog.minutesPlaceholder": "es. 25",
             "dialog.noteLabel": "Descrizione / note (facoltativo):",
+            "dialog.routineCheck": "Fa parte della mia routine giornaliera",
+            "quick.placeholder": "Nome attività…",
             "dialog.noTaskTitle": "Nessuna attività selezionata",
             "dialog.noTaskInfo": "Seleziona prima un'attività dall'elenco 📋 Attività.",
             "dialog.deleteTitle": "Eliminare l'attività “%@”?",
@@ -274,6 +346,20 @@ struct L10n {
             "notif.breakStart.long": "È ora di una pausa lunga. 💪",
             "notif.breakDone": "☕ Pausa terminata",
             "notif.breakDoneBody": "Torna al lavoro — prossimo pomodoro!",
+            "routine.title": "📅 Routine giornaliera",
+            "routine.progress": "Routine: %d/%d completate",
+            "routine.todoPrefix": "TODO ",
+            "routine.add": "➕ Aggiungi alla routine…",
+            "routine.empty": "Nessun elemento — aggiungine uno",
+            "routine.markDone": "✓ Segna come completata",
+            "routine.unmark": "↩ Annulla",
+            "routine.focus": "▶ Concentrati su questa attività",
+            "routine.delete": "🗑 Elimina",
+            "routine.deleteTitle": "Eliminare l'elemento “%@” dalla routine?",
+            "routine.deleteInfo": "Verrà rimosso dalla tua routine giornaliera.",
+            "autostart.title": "🚀 Avvia all'accesso",
+            "autostart.error": "Impossibile modificare l'avvio all'accesso: %@",
+            "about.github": "Apri il repository GitHub",
         ],
         "ar": [
             "focus.work": "🍅 التركيز: %@ (%d دقيقة)",
@@ -300,7 +386,8 @@ struct L10n {
             "settings.shortBreak": "استراحة قصيرة",
             "settings.longBreak": "استراحة طويلة",
             "settings.language": "🌐 اللغة",
-            "info": "🍅 بومودورو بار · v1.2",
+            "settings.sounds": "🔔 صوت عند انتهاء الجلسة",
+            "info": "🍅 بومودورو بار · v1.3",
             "menu.quit": "إنهاء",
             "dialog.addTitle": "مهمة جديدة",
             "dialog.editTitle": "تعديل المهمة",
@@ -313,6 +400,8 @@ struct L10n {
             "dialog.minutesLabel": "المدة (بالدقائق):",
             "dialog.minutesPlaceholder": "مثال: 25",
             "dialog.noteLabel": "الوصف / ملاحظات (اختياري):",
+            "dialog.routineCheck": "جزء من روتيني اليومي",
+            "quick.placeholder": "اسم المهمة…",
             "dialog.noTaskTitle": "لم يتم تحديد مهمة",
             "dialog.noTaskInfo": "اختر مهمة من قائمة 📋 المهام أولًا.",
             "dialog.deleteTitle": "حذف المهمة «%@»؟",
@@ -323,6 +412,20 @@ struct L10n {
             "notif.breakStart.long": "حان وقت استراحة طويلة. 💪",
             "notif.breakDone": "☕ انتهت الاستراحة",
             "notif.breakDoneBody": "عُد إلى العمل — بومودورو التالي!",
+            "routine.title": "📅 الروتين اليومي",
+            "routine.progress": "الروتين: %d/%d مكتملة",
+            "routine.todoPrefix": "TODO ",
+            "routine.add": "➕ إضافة إلى الروتين…",
+            "routine.empty": "لا توجد عناصر — أضف الأول",
+            "routine.markDone": "✓ وضع علامة كمكتملة",
+            "routine.unmark": "↩ تراجع",
+            "routine.focus": "▶ التركيز على هذه المهمة",
+            "routine.delete": "🗑 حذف",
+            "routine.deleteTitle": "حذف العنصر «%@» من الروتين؟",
+            "routine.deleteInfo": "سيتم إزالته من روتينك اليومي.",
+            "autostart.title": "🚀 التشغيل عند تسجيل الدخول",
+            "autostart.error": "تعذّر تغيير التشغيل عند تسجيل الدخول: %@",
+            "about.github": "فتح مستودع GitHub",
         ],
     ]
 }
@@ -334,6 +437,42 @@ struct Task: Codable {
     var name: String
     var durationMinutes: Int
     var note: String?
+    var isRoutine: Bool = false
+    var routineDone: Bool = false
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, durationMinutes, note, isRoutine, routineDone
+    }
+
+    init(id: UUID, name: String, durationMinutes: Int, note: String? = nil,
+         isRoutine: Bool = false, routineDone: Bool = false) {
+        self.id = id
+        self.name = name
+        self.durationMinutes = durationMinutes
+        self.note = note
+        self.isRoutine = isRoutine
+        self.routineDone = routineDone
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = try c.decode(UUID.self, forKey: .id)
+        name = try c.decode(String.self, forKey: .name)
+        durationMinutes = try c.decode(Int.self, forKey: .durationMinutes)
+        note = try c.decodeIfPresent(String.self, forKey: .note)
+        isRoutine = try c.decodeIfPresent(Bool.self, forKey: .isRoutine) ?? false
+        routineDone = try c.decodeIfPresent(Bool.self, forKey: .routineDone) ?? false
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(id, forKey: .id)
+        try c.encode(name, forKey: .name)
+        try c.encode(durationMinutes, forKey: .durationMinutes)
+        try c.encodeIfPresent(note, forKey: .note)
+        try c.encode(isRoutine, forKey: .isRoutine)
+        try c.encode(routineDone, forKey: .routineDone)
+    }
 }
 
 enum Phase {
@@ -356,6 +495,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private let longKey = "pomodoro.longBreakMinutes"
     private let pomodorosKey = "pomodoro.completedPomodoros"
     private let langKey = "pomodoro.language"
+    private let routineDateKey = "pomodoro.routineDate"
+    private let soundsKey = "pomodoro.sounds"
 
     private var tasks: [Task] = []
     private var focusTaskID: UUID?
@@ -364,6 +505,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var shortBreakMinutes = 5
     private var longBreakMinutes = 15
     private var completedPomodoros = 0
+    private var routineDate = ""
+    private var soundsEnabled = true
 
     // Timer state
     private var phase: Phase = .work
@@ -391,9 +534,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var shortSubmenu: NSMenu!
     private var longSubmenu: NSMenu!
     private var languageSubmenu: NSMenu!
+    private var routineSectionItems: [NSMenuItem] = []
     private var recentHeaderItem: NSMenuItem?
     private var recentItems: [NSMenuItem] = []
     private var infoPanel: NSPanel?
+    private var quickTaskItem: NSMenuItem!
+    private var quickNameField: NSTextField?
+    private var quickMinutesField: NSTextField?
 
     // MARK: - Lifecycle
 
@@ -401,6 +548,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         loadState()
         setupStatusItem()
         setupMenu()
+        resetRoutineIfNeeded()
         refreshStatus()
         startTicker()
         requestNotificationPermission()
@@ -435,6 +583,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         menu.addItem(.separator())
 
+        quickTaskItem = makeQuickTaskItem()
+        menu.addItem(quickTaskItem)
+
+        menu.addItem(.separator())
+
         startPauseItem = NSMenuItem(title: L10n.t("timer.start"), action: #selector(toggleStartPause), keyEquivalent: "")
         startPauseItem.target = self
         menu.addItem(startPauseItem)
@@ -450,25 +603,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         menu.addItem(.separator())
 
-        let plus5 = NSMenuItem(title: "⏱️ +5 min", action: #selector(adjustDuration(_:)), keyEquivalent: "")
-        plus5.target = self
-        plus5.representedObject = 5
-        menu.addItem(plus5)
-
-        let plus10 = NSMenuItem(title: "⏱️ +10 min", action: #selector(adjustDuration(_:)), keyEquivalent: "")
-        plus10.target = self
-        plus10.representedObject = 10
-        menu.addItem(plus10)
-
-        let minus5 = NSMenuItem(title: "⏱️ −5 min", action: #selector(adjustDuration(_:)), keyEquivalent: "")
-        minus5.target = self
-        minus5.representedObject = -5
-        menu.addItem(minus5)
-
-        let minus10 = NSMenuItem(title: "⏱️ −10 min", action: #selector(adjustDuration(_:)), keyEquivalent: "")
-        minus10.target = self
-        minus10.representedObject = -10
-        menu.addItem(minus10)
+        menu.addItem(makeStepperItem(label: "5 min", delta: 5))
+        menu.addItem(makeStepperItem(label: "10 min", delta: 10))
 
         menu.addItem(.separator())
 
@@ -477,13 +613,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         tasksMenuItem.submenu = tasksSubmenu
         menu.addItem(tasksMenuItem)
 
-        editTaskItem = NSMenuItem(title: L10n.t("tasks.edit"), action: #selector(editFocusTask), keyEquivalent: "")
-        editTaskItem.target = self
-        menu.addItem(editTaskItem)
 
-        deleteTaskItem = NSMenuItem(title: L10n.t("tasks.delete"), action: #selector(deleteFocusTask), keyEquivalent: "")
-        deleteTaskItem.target = self
-        menu.addItem(deleteTaskItem)
+
+
 
         menu.addItem(.separator())
 
@@ -510,13 +642,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         languageItem.submenu = languageSubmenu
         settingsMenu.addItem(languageItem)
 
+        let autostartItem = NSMenuItem(title: L10n.t("autostart.title"), action: #selector(toggleLaunchAtLogin), keyEquivalent: "")
+        autostartItem.target = self
+        autostartItem.state = isLaunchAtLoginEnabled ? .on : .off
+        settingsMenu.addItem(autostartItem)
+
+        let soundsItem = NSMenuItem(title: L10n.t("settings.sounds"), action: #selector(toggleSounds), keyEquivalent: "")
+        soundsItem.target = self
+        soundsItem.state = soundsEnabled ? .on : .off
+        settingsMenu.addItem(soundsItem)
+
         settingsItem.submenu = settingsMenu
         menu.addItem(settingsItem)
 
         menu.addItem(.separator())
 
-        let infoItem = NSMenuItem(title: L10n.t("info"), action: nil, keyEquivalent: "")
-        infoItem.isEnabled = false
+        let infoItem = NSMenuItem(title: L10n.t("info"), action: #selector(openGitHub), keyEquivalent: "")
+        infoItem.target = self
+        infoItem.toolTip = L10n.t("about.github")
         menu.addItem(infoItem)
 
         menu.addItem(.separator())
@@ -528,6 +671,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         buildTasksMenu()
         buildDurationMenus()
         buildLanguageMenu()
+        rebuildRoutineSection()
         rebuildRecentSection()
         refreshStatus()
     }
@@ -541,7 +685,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         } else {
             for task in tasks {
                 let noteMark = (task.note?.isEmpty == false) ? L10n.t("tasks.noteMark") : ""
-                let item = NSMenuItem(title: L10n.t("tasks.item", task.name, task.durationMinutes) + noteMark,
+                let routineMark = task.isRoutine ? " 📅" : ""
+                let item = NSMenuItem(title: L10n.t("tasks.item", task.name, task.durationMinutes) + noteMark + routineMark,
                                       action: #selector(focusTask(_:)), keyEquivalent: "")
                 item.target = self
                 item.representedObject = task.id
@@ -554,6 +699,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         let addItem = NSMenuItem(title: L10n.t("tasks.add"), action: #selector(addTask), keyEquivalent: "")
         addItem.target = self
         tasksSubmenu.addItem(addItem)
+
+        editTaskItem = NSMenuItem(title: L10n.t("tasks.edit"), action: #selector(editFocusTask), keyEquivalent: "")
+        editTaskItem.target = self
+        editTaskItem.isEnabled = !tasks.isEmpty
+        tasksSubmenu.addItem(editTaskItem)
+
+        deleteTaskItem = NSMenuItem(title: L10n.t("tasks.delete"), action: #selector(deleteFocusTask), keyEquivalent: "")
+        deleteTaskItem.target = self
+        deleteTaskItem.isEnabled = !tasks.isEmpty
+        tasksSubmenu.addItem(deleteTaskItem)
     }
 
     private func buildDurationMenus() {
@@ -593,6 +748,158 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             item.state = (code == L10n.lang) ? .on : .off
             languageSubmenu.addItem(item)
         }
+    }
+
+    // MARK: - Codzienna rutyna
+
+    private var routineTasks: [Task] {
+        tasks.filter { $0.isRoutine }
+    }
+
+    private func rebuildRoutineSection() {
+        for item in routineSectionItems {
+            menu.removeItem(item)
+        }
+        routineSectionItems = []
+
+        let routine = routineTasks
+        guard !routine.isEmpty, let anchor = tasksMenuItem else { return }
+
+        func insertIndex() -> Int {
+            menu.items.firstIndex(of: anchor) ?? menu.items.count
+        }
+
+        let separator = NSMenuItem.separator()
+        menu.insertItem(separator, at: insertIndex())
+        routineSectionItems.append(separator)
+
+        let doneCount = routine.filter { $0.routineDone }.count
+        let header = NSMenuItem(title: "\(L10n.t("routine.title"))  ·  \(doneCount)/\(routine.count)",
+                                action: nil, keyEquivalent: "")
+        header.isEnabled = false
+        menu.insertItem(header, at: insertIndex())
+        routineSectionItems.append(header)
+
+        for task in routine {
+            let item = makeRoutineTaskItem(task)
+            menu.insertItem(item, at: insertIndex())
+            routineSectionItems.append(item)
+        }
+
+        let trailingSeparator = NSMenuItem.separator()
+        menu.insertItem(trailingSeparator, at: insertIndex())
+        routineSectionItems.append(trailingSeparator)
+    }
+
+    private func makeRoutineTaskItem(_ task: Task) -> NSMenuItem {
+        let minutes = " · \(task.durationMinutes) min"
+        let item = NSMenuItem(title: "", action: #selector(focusTask(_:)), keyEquivalent: "")
+        item.target = self
+        item.representedObject = task.id
+        item.toolTip = (task.note?.isEmpty == false) ? task.note : nil
+        if task.routineDone {
+            item.attributedTitle = NSAttributedString(string: "✅ \(task.name)\(minutes)", attributes: [
+                .font: NSFont.systemFont(ofSize: 13),
+                .foregroundColor: NSColor.systemGreen
+            ])
+        } else {
+            let title = "⬜ \(L10n.t("routine.todoPrefix"))\(task.name)\(minutes)"
+            item.attributedTitle = NSAttributedString(string: title, attributes: [
+                .font: NSFont.boldSystemFont(ofSize: 13),
+                .foregroundColor: NSColor.systemRed
+            ])
+        }
+        return item
+    }
+
+    private func selectTask(_ id: UUID) {
+        focusTaskID = id
+        saveTasks()
+        touchRecent(id)
+        buildTasksMenu()
+        rebuildRoutineSection()
+        refreshStatus()
+        if let task = tasks.first(where: { $0.id == id }), task.note?.isEmpty == false {
+            showTaskInfoPopup(task)
+        }
+    }
+
+    private func markRoutineDoneIfDue() {
+        guard phase == .work, let id = focusTaskID,
+              let idx = tasks.firstIndex(where: { $0.id == id }),
+              tasks[idx].isRoutine, !tasks[idx].routineDone else { return }
+        let quarter = Double(tasks[idx].durationMinutes) * 60.0 * 0.25
+        if elapsed() >= quarter {
+            tasks[idx].routineDone = true
+            saveTasks()
+            rebuildRoutineSection()
+        }
+    }
+
+    private func resetRoutineIfNeeded() {
+        let today = Self.dateString(Date())
+        if routineDate != today {
+            routineDate = today
+            defaults.set(routineDate, forKey: routineDateKey)
+            var changed = false
+            for i in tasks.indices where tasks[i].isRoutine && tasks[i].routineDone {
+                tasks[i].routineDone = false
+                changed = true
+            }
+            if changed {
+                saveTasks()
+                rebuildRoutineSection()
+            }
+        }
+    }
+
+    private static func dateString(_ d: Date) -> String {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy-MM-dd"
+        return f.string(from: d)
+    }
+
+    // MARK: - Autostart i GitHub
+
+    private var isLaunchAtLoginEnabled: Bool {
+        if #available(macOS 13.0, *) {
+            return SMAppService.mainApp.status == .enabled
+        }
+        return false
+    }
+
+    @objc private func toggleLaunchAtLogin() {
+        guard #available(macOS 13.0, *) else { return }
+        do {
+            if isLaunchAtLoginEnabled {
+                try SMAppService.mainApp.unregister()
+            } else {
+                try SMAppService.mainApp.register()
+            }
+        } catch {
+            let alert = NSAlert()
+            alert.messageText = L10n.t("autostart.error", error.localizedDescription)
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+        }
+        setupMenu()
+    }
+
+    @objc private func openGitHub() {
+        if let url = URL(string: "https://github.com/essmos/PomodoroBar") {
+            NSWorkspace.shared.open(url)
+        }
+    }
+
+    @objc private func toggleSounds() {
+        soundsEnabled.toggle()
+        defaults.set(soundsEnabled, forKey: soundsKey)
+        setupMenu()
+    }
+
+    private func playCompletionSound(_ name: String) {
+        guard soundsEnabled else { return }
+        NSSound(named: name)?.play()
     }
 
     // MARK: - Ostatnie zadania (szybki wybór)
@@ -647,13 +954,78 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
     }
 
+    // MARK: - Szybkie zadanie
+
+    private func makeQuickTaskItem() -> NSMenuItem {
+        let view = NSView(frame: NSRect(x: 0, y: 0, width: 310, height: 36))
+
+        let bolt = NSTextField(labelWithString: "⚡")
+        bolt.frame = NSRect(x: 6, y: 10, width: 22, height: 17)
+        view.addSubview(bolt)
+
+        let nameField = NSTextField(frame: NSRect(x: 30, y: 6, width: 130, height: 24))
+        nameField.placeholderString = L10n.t("quick.placeholder")
+        nameField.font = .systemFont(ofSize: 13)
+        nameField.target = self
+        nameField.action = #selector(quickStart(_:))
+        view.addSubview(nameField)
+        quickNameField = nameField
+
+        let minutesField = NSTextField(frame: NSRect(x: 164, y: 6, width: 40, height: 24))
+        minutesField.stringValue = "25"
+        minutesField.alignment = .center
+        minutesField.font = .systemFont(ofSize: 13)
+        minutesField.target = self
+        minutesField.action = #selector(quickStart(_:))
+        view.addSubview(minutesField)
+        quickMinutesField = minutesField
+
+        let minLabel = NSTextField(labelWithString: "min")
+        minLabel.frame = NSRect(x: 206, y: 10, width: 26, height: 17)
+        minLabel.font = .systemFont(ofSize: 12)
+        view.addSubview(minLabel)
+
+        let startButton = NSButton(title: L10n.t("timer.start"), target: self, action: #selector(quickStart(_:)))
+        startButton.bezelStyle = .rounded
+        startButton.controlSize = .small
+        startButton.frame = NSRect(x: 236, y: 4, width: 68, height: 26)
+        view.addSubview(startButton)
+
+        let item = NSMenuItem()
+        item.view = view
+        return item
+    }
+
+    @objc private func quickStart(_ sender: Any?) {
+        let rawName = (quickNameField?.stringValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        let rawMinutes = quickMinutesField?.integerValue ?? 25
+        let minutes = max(1, min(480, rawMinutes == 0 ? 25 : rawMinutes))
+        guard !rawName.isEmpty else {
+            NSSound.beep()
+            return
+        }
+        let task = Task(id: UUID(), name: rawName, durationMinutes: minutes)
+        tasks.append(task)
+        focusTaskID = task.id
+        saveTasks()
+        touchRecent(task.id)
+        buildTasksMenu()
+        rebuildRoutineSection()
+        rebuildRecentSection()
+        accumulated = 0
+        start()
+        quickNameField?.stringValue = ""
+        refreshStatus()
+        menu.cancelTracking()
+    }
+
     // MARK: - Task actions
 
     @objc private func addTask() {
         presentTaskDialog(title: L10n.t("dialog.addTitle"), confirm: L10n.t("dialog.addConfirm"),
-                          initialName: nil, initialMinutes: workMinutes, initialNote: nil) { [weak self] name, minutes, note in
+                          initialName: nil, initialMinutes: workMinutes, initialNote: nil, initialIsRoutine: false) { [weak self] name, minutes, note, isRoutine in
             guard let self else { return }
-            let task = Task(id: UUID(), name: name, durationMinutes: minutes, note: note)
+            let task = Task(id: UUID(), name: name, durationMinutes: minutes, note: note, isRoutine: isRoutine)
             self.tasks.append(task)
             if self.focusTaskID == nil {
                 self.focusTaskID = task.id
@@ -661,6 +1033,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             self.saveTasks()
             self.touchRecent(task.id)
             self.buildTasksMenu()
+            self.rebuildRoutineSection()
             self.refreshStatus()
         }
     }
@@ -676,13 +1049,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
         let task = tasks[idx]
         presentTaskDialog(title: L10n.t("dialog.editTitle"), confirm: L10n.t("dialog.save"),
-                          initialName: task.name, initialMinutes: task.durationMinutes, initialNote: task.note) { [weak self] name, minutes, note in
+                          initialName: task.name, initialMinutes: task.durationMinutes,
+                          initialNote: task.note, initialIsRoutine: task.isRoutine) { [weak self] name, minutes, note, isRoutine in
             guard let self else { return }
             self.tasks[idx].name = name
             self.tasks[idx].durationMinutes = minutes
             self.tasks[idx].note = note
+            self.tasks[idx].isRoutine = isRoutine
             self.saveTasks()
             self.buildTasksMenu()
+            self.rebuildRoutineSection()
             self.refreshStatus()
         }
     }
@@ -704,20 +1080,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
         saveTasks()
         buildTasksMenu()
+        rebuildRoutineSection()
         rebuildRecentSection()
         refreshStatus()
     }
 
     @objc private func focusTask(_ sender: NSMenuItem) {
         guard let id = sender.representedObject as? UUID else { return }
-        focusTaskID = id
-        saveTasks()
-        touchRecent(id)
-        buildTasksMenu()
-        refreshStatus()
-        if let task = tasks.first(where: { $0.id == id }), task.note?.isEmpty == false {
-            showTaskInfoPopup(task)
-        }
+        selectTask(id)
     }
 
     @objc private func setLanguage(_ sender: NSMenuItem) {
@@ -780,39 +1150,39 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     private func presentTaskDialog(title: String, confirm: String, initialName: String?, initialMinutes: Int,
-                                   initialNote: String?,
-                                   completion: @escaping (String, Int, String) -> Void) {
+                                   initialNote: String?, initialIsRoutine: Bool,
+                                   completion: @escaping (String, Int, String, Bool) -> Void) {
         let alert = NSAlert()
         alert.messageText = title
         alert.informativeText = L10n.t("dialog.info")
 
-        let container = NSView(frame: NSRect(x: 0, y: 0, width: 420, height: 252))
+        let container = NSView(frame: NSRect(x: 0, y: 0, width: 420, height: 282))
 
         let nameLabel = NSTextField(labelWithString: L10n.t("dialog.nameLabel"))
-        nameLabel.frame = NSRect(x: 0, y: 228, width: 420, height: 17)
+        nameLabel.frame = NSRect(x: 0, y: 256, width: 420, height: 17)
         container.addSubview(nameLabel)
 
-        let nameField = NSTextField(frame: NSRect(x: 0, y: 194, width: 420, height: 28))
+        let nameField = NSTextField(frame: NSRect(x: 0, y: 222, width: 420, height: 28))
         nameField.placeholderString = L10n.t("dialog.namePlaceholder")
         nameField.font = .systemFont(ofSize: 14)
         nameField.stringValue = initialName ?? ""
         container.addSubview(nameField)
 
         let minLabel = NSTextField(labelWithString: L10n.t("dialog.minutesLabel"))
-        minLabel.frame = NSRect(x: 0, y: 170, width: 420, height: 17)
+        minLabel.frame = NSRect(x: 0, y: 198, width: 420, height: 17)
         container.addSubview(minLabel)
 
-        let minutesField = NSTextField(frame: NSRect(x: 0, y: 136, width: 420, height: 28))
+        let minutesField = NSTextField(frame: NSRect(x: 0, y: 164, width: 420, height: 28))
         minutesField.placeholderString = L10n.t("dialog.minutesPlaceholder")
         minutesField.font = .systemFont(ofSize: 14)
         minutesField.stringValue = String(initialMinutes)
         container.addSubview(minutesField)
 
         let noteLabel = NSTextField(labelWithString: L10n.t("dialog.noteLabel"))
-        noteLabel.frame = NSRect(x: 0, y: 112, width: 420, height: 17)
+        noteLabel.frame = NSRect(x: 0, y: 140, width: 420, height: 17)
         container.addSubview(noteLabel)
 
-        let scroll = NSScrollView(frame: NSRect(x: 0, y: 0, width: 420, height: 106))
+        let scroll = NSScrollView(frame: NSRect(x: 0, y: 28, width: 420, height: 106))
         scroll.hasVerticalScroller = true
         scroll.borderType = .bezelBorder
         scroll.autohidesScrollers = true
@@ -829,6 +1199,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         scroll.documentView = noteView
         container.addSubview(scroll)
 
+        let routineCheck = NSButton(checkboxWithTitle: L10n.t("dialog.routineCheck"), target: nil, action: nil)
+        routineCheck.frame = NSRect(x: 0, y: 0, width: 420, height: 20)
+        routineCheck.state = initialIsRoutine ? .on : .off
+        container.addSubview(routineCheck)
+
         alert.accessoryView = container
         alert.window.initialFirstResponder = nameField
         alert.addButton(withTitle: confirm)
@@ -839,8 +1214,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         let raw = minutesField.integerValue == 0 ? initialMinutes : minutesField.integerValue
         let minutes = max(1, min(480, raw))
         let note = noteView.string.trimmingCharacters(in: .whitespacesAndNewlines)
+        let isRoutine = routineCheck.state == .on
         guard !name.isEmpty else { return }
-        completion(name, minutes, note)
+        completion(name, minutes, note, isRoutine)
     }
 
     // MARK: - Duration settings
@@ -871,8 +1247,38 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     // MARK: - Wydłużanie / skracanie sesji
 
-    @objc private func adjustDuration(_ sender: NSMenuItem) {
-        guard let delta = sender.representedObject as? Int else { return }
+    private func makeStepperItem(label: String, delta: Int) -> NSMenuItem {
+        let view = NSView(frame: NSRect(x: 0, y: 0, width: 200, height: 24))
+
+        let labelField = NSTextField(labelWithString: "⏱️ \(label)")
+        labelField.frame = NSRect(x: 8, y: 4, width: 110, height: 17)
+        labelField.font = .systemFont(ofSize: 13)
+        view.addSubview(labelField)
+
+        let minus = NSButton(title: "−", target: self, action: #selector(adjustDuration(_:)))
+        minus.tag = -delta
+        minus.bezelStyle = .rounded
+        minus.controlSize = .small
+        minus.frame = NSRect(x: 126, y: 1, width: 32, height: 22)
+        view.addSubview(minus)
+
+        let plus = NSButton(title: "+", target: self, action: #selector(adjustDuration(_:)))
+        plus.tag = delta
+        plus.bezelStyle = .rounded
+        plus.controlSize = .small
+        plus.frame = NSRect(x: 162, y: 1, width: 32, height: 22)
+        view.addSubview(plus)
+
+        let item = NSMenuItem()
+        item.view = view
+        return item
+    }
+
+    @objc private func adjustDuration(_ sender: NSButton) {
+        applyDurationDelta(sender.tag)
+    }
+
+    private func applyDurationDelta(_ delta: Int) {
         if phase == .work {
             if let id = focusTaskID, let idx = tasks.firstIndex(where: { $0.id == id }) {
                 tasks[idx].durationMinutes = max(1, min(480, tasks[idx].durationMinutes + delta))
@@ -976,6 +1382,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     private func tick() {
         guard isRunning else { return }
+        markRoutineDoneIfDue()
         if elapsed() >= sessionDuration {
             completeSession()
         }
@@ -990,10 +1397,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             let isLong = completedPomodoros % 4 == 0
             phase = isLong ? .longBreak : .shortBreak
             let kind = isLong ? "long" : "short"
+            playCompletionSound("Glass")
             notify(title: L10n.t("notif.workDone"),
                    body: L10n.t("notif.breakStart.\(kind)"))
         case .shortBreak, .longBreak:
             phase = .work
+            playCompletionSound("Ping")
             notify(title: L10n.t("notif.breakDone"),
                    body: L10n.t("notif.breakDoneBody"))
         }
@@ -1069,6 +1478,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             recentTaskIDs = arr.compactMap { UUID(uuidString: $0) }
                 .filter { id in tasks.contains { $0.id == id } }
         }
+        routineDate = defaults.string(forKey: routineDateKey) ?? ""
+        soundsEnabled = defaults.object(forKey: soundsKey) as? Bool ?? true
         workMinutes = defaults.integer(forKey: workKey) > 0 ? defaults.integer(forKey: workKey) : 25
         shortBreakMinutes = defaults.integer(forKey: shortKey) > 0 ? defaults.integer(forKey: shortKey) : 5
         longBreakMinutes = defaults.integer(forKey: longKey) > 0 ? defaults.integer(forKey: longKey) : 15
@@ -1089,8 +1500,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     // MARK: - Menu delegate
 
     func menuWillOpen(_ menu: NSMenu) {
+        resetRoutineIfNeeded()
         refreshStatus()
         buildTasksMenu()
+        rebuildRoutineSection()
         rebuildRecentSection()
     }
 
