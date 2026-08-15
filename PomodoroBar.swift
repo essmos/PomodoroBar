@@ -57,6 +57,11 @@ struct L10n {
             "settings.shortBreak": "Krótka przerwa",
             "settings.longBreak": "Długa przerwa",
             "settings.language": "🌐 Język",
+            "changelog.show": "📝 Pokaż changelog",
+            "changelog.error": "Nie udało się otworzyć notatki",
+            "changelog.errorInfo": "Ustawienia systemowe -> Prywatność i bezpieczeństwo -> Automatyzacja: pozwól aplikacji sterować aplikacją Notatki.",
+            "changelog.tip": "Wskazówka: jeśli nie widzisz aplikacji w Automatyzacji, przenieś PomodoroBar.app do folderu Aplikacje i uruchom ponownie.",
+            "changelog.openSettings": "Otwórz ustawienia",
             "stats.title": "📊 Statystyki",
             "stats.today": "Dziś: %@",
             "stats.week": "Ten tydzień: %@",
@@ -70,7 +75,7 @@ struct L10n {
             "stats.taskColumn": "Zadanie",
             "stats.timeColumn": "Czas",
             "settings.sounds": "🔔 Dźwięki na koniec sesji",
-            "info": "🍅 Pomodoro Bar · v1.3.5",
+            "info": "🍅 Pomodoro Bar · v1.4.0",
             "menu.quit": "Zakończ",
             "dialog.addTitle": "Nowe zadanie",
             "dialog.editTitle": "Edytuj zadanie",
@@ -145,6 +150,11 @@ struct L10n {
             "settings.shortBreak": "Short break",
             "settings.longBreak": "Long break",
             "settings.language": "🌐 Language",
+            "changelog.show": "📝 Show changelog",
+            "changelog.error": "Could not open the note",
+            "changelog.errorInfo": "System Settings -> Privacy & Security -> Automation: allow this app to control Notes.",
+            "changelog.tip": "Tip: if you don't see the app in Automation, move PomodoroBar.app to /Applications and relaunch.",
+            "changelog.openSettings": "Open Settings",
             "stats.title": "📊 Statistics",
             "stats.today": "Today: %@",
             "stats.week": "This week: %@",
@@ -158,7 +168,7 @@ struct L10n {
             "stats.taskColumn": "Task",
             "stats.timeColumn": "Time",
             "settings.sounds": "🔔 Sound at session end",
-            "info": "🍅 Pomodoro Bar · v1.3.5",
+            "info": "🍅 Pomodoro Bar · v1.4.0",
             "menu.quit": "Quit",
             "dialog.addTitle": "New task",
             "dialog.editTitle": "Edit task",
@@ -233,6 +243,11 @@ struct L10n {
             "settings.shortBreak": "Descanso corto",
             "settings.longBreak": "Descanso largo",
             "settings.language": "🌐 Idioma",
+            "changelog.show": "📝 Ver changelog",
+            "changelog.error": "No se pudo abrir la nota",
+            "changelog.errorInfo": "Ajustes del sistema -> Privacidad y seguridad -> Automatización: permite que la app controle Notas.",
+            "changelog.tip": "Consejo: si no ves la app en Automatización, mueve PomodoroBar.app a /Applications y reiníciala.",
+            "changelog.openSettings": "Abrir ajustes",
             "stats.title": "📊 Estadísticas",
             "stats.today": "Hoy: %@",
             "stats.week": "Esta semana: %@",
@@ -246,7 +261,7 @@ struct L10n {
             "stats.taskColumn": "Tarea",
             "stats.timeColumn": "Tiempo",
             "settings.sounds": "🔔 Sonido al terminar la sesión",
-            "info": "🍅 Pomodoro Bar · v1.3.5",
+            "info": "🍅 Pomodoro Bar · v1.4.0",
             "menu.quit": "Salir",
             "dialog.addTitle": "Nueva tarea",
             "dialog.editTitle": "Editar tarea",
@@ -321,6 +336,11 @@ struct L10n {
             "settings.shortBreak": "Pause courte",
             "settings.longBreak": "Pause longue",
             "settings.language": "🌐 Langue",
+            "changelog.show": "📝 Voir le changelog",
+            "changelog.error": "Impossible d'ouvrir la note",
+            "changelog.errorInfo": "Réglages système -> Confidentialité et sécurité -> Automatisation : autorisez l'app à contrôler Notes.",
+            "changelog.tip": "Astuce : si l'app n'apparaît pas dans Automatisation, déplacez PomodoroBar.app vers /Applications et relancez-la.",
+            "changelog.openSettings": "Ouvrir les réglages",
             "stats.title": "📊 Statistiques",
             "stats.today": "Aujourd'hui : %@",
             "stats.week": "Cette semaine : %@",
@@ -334,7 +354,7 @@ struct L10n {
             "stats.taskColumn": "Tâche",
             "stats.timeColumn": "Temps",
             "settings.sounds": "🔔 Son à la fin de la session",
-            "info": "🍅 Pomodoro Bar · v1.3.5",
+            "info": "🍅 Pomodoro Bar · v1.4.0",
             "menu.quit": "Quitter",
             "dialog.addTitle": "Nouvelle tâche",
             "dialog.editTitle": "Modifier la tâche",
@@ -409,6 +429,11 @@ struct L10n {
             "settings.shortBreak": "Pausa breve",
             "settings.longBreak": "Pausa lunga",
             "settings.language": "🌐 Lingua",
+            "changelog.show": "📝 Mostra changelog",
+            "changelog.error": "Impossibile aprire la nota",
+            "changelog.errorInfo": "Impostazioni di sistema -> Privacy e sicurezza -> Automazione: consenti all'app di controllare Note.",
+            "changelog.tip": "Suggerimento: se non vedi l'app in Automazione, sposta PomodoroBar.app in /Applications e riavviala.",
+            "changelog.openSettings": "Apri impostazioni",
             "stats.title": "📊 Statistiche",
             "stats.today": "Oggi: %@",
             "stats.week": "Questa settimana: %@",
@@ -422,7 +447,7 @@ struct L10n {
             "stats.taskColumn": "Attività",
             "stats.timeColumn": "Tempo",
             "settings.sounds": "🔔 Suono a fine sessione",
-            "info": "🍅 Pomodoro Bar · v1.3.5",
+            "info": "🍅 Pomodoro Bar · v1.4.0",
             "menu.quit": "Esci",
             "dialog.addTitle": "Nuova attività",
             "dialog.editTitle": "Modifica attività",
@@ -497,6 +522,11 @@ struct L10n {
             "settings.shortBreak": "استراحة قصيرة",
             "settings.longBreak": "استراحة طويلة",
             "settings.language": "🌐 اللغة",
+            "changelog.show": "📝 عرض سجل التغييرات",
+            "changelog.error": "تعذّر فتح الملاحظة",
+            "changelog.errorInfo": "إعدادات النظام -> الخصوصية والأمان -> الأتمتة: اسمح للتطبيق بالتحكم في الملاحظات.",
+            "changelog.tip": "تلميح: إذا لم تظهر التطبيق في الأتمتة، انقل PomodoroBar.app إلى /Applications وأعد تشغيله.",
+            "changelog.openSettings": "فتح الإعدادات",
             "stats.title": "📊 الإحصائيات",
             "stats.today": "اليوم: %@",
             "stats.week": "هذا الأسبوع: %@",
@@ -510,7 +540,7 @@ struct L10n {
             "stats.taskColumn": "المهمة",
             "stats.timeColumn": "الوقت",
             "settings.sounds": "🔔 صوت عند انتهاء الجلسة",
-            "info": "🍅 بومودورو بار · v1.3.5",
+            "info": "🍅 بومودورو بار · v1.4.0",
             "menu.quit": "إنهاء",
             "dialog.addTitle": "مهمة جديدة",
             "dialog.editTitle": "تعديل المهمة",
@@ -675,6 +705,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
     private var progressItem: NSMenuItem!
     private var elapsedItem: NSMenuItem!
     private var pomodoroCountItem: NSMenuItem!
+    private var changelogItem: NSMenuItem!
     private var startPauseItem: NSMenuItem!
     private var stopItem: NSMenuItem!
     private var skipBreakItem: NSMenuItem!
@@ -708,6 +739,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         setupMenu()
         resetRoutineIfNeeded()
         refreshStatus()
+        let argsLine = CommandLine.arguments.joined(separator: " ")
+        logFile("launch args: " + argsLine)
+        if CommandLine.arguments.contains("--notes-diag") {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.runNotesDiagnostic()
+            }
+        }
         startTicker()
         requestNotificationPermission()
     }
@@ -738,6 +776,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         pomodoroCountItem = NSMenuItem(title: "…", action: nil, keyEquivalent: "")
         pomodoroCountItem.isEnabled = false
         menu.addItem(pomodoroCountItem)
+
+        changelogItem = NSMenuItem(title: L10n.t("changelog.show"), action: #selector(openNotesChangelog), keyEquivalent: "")
+        changelogItem.target = self
+        changelogItem.isEnabled = false
+        menu.addItem(changelogItem)
 
         menu.addItem(.separator())
 
@@ -1168,6 +1211,192 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         return f.string(from: d)
     }
 
+    // MARK: - Changelog (Apple Notes)
+
+    private func escapeAppleScript(_ s: String) -> String {
+        s.replacingOccurrences(of: "\\", with: "\\\\")
+         .replacingOccurrences(of: "\"", with: "\\\"")
+    }
+
+    @objc private func openNotesChangelog() {
+        guard let task = focusTask, !task.name.isEmpty else { return }
+        logFile("openNotesChangelog: task=\(task.name)")
+        let name = escapeAppleScript(task.name)
+        let script = """
+        tell application "Notes"
+            set folderName to "🍅 Pomodoro"
+            if not (exists folder folderName) then
+                make new folder with properties {name:folderName}
+            end if
+            set targetFolder to folder folderName
+            set noteName to "\(name)"
+            if (count of (notes of targetFolder whose name is noteName)) = 0 then
+                make new note at targetFolder with properties {name:noteName, body:"<div><b>Changelog:</b> \(name)</div>"}
+            end if
+            set targetNote to first note of targetFolder whose name is noteName
+            set stamp to (do shell script "date '+%d.%m.%Y %H:%M'")
+            set divider to "<div><b>---- " & stamp & "</b></div>"
+            set noteBody to body of targetNote
+            if noteBody contains "</div>" then
+                set p1 to offset of "</div>" in noteBody
+                set head1 to text 1 thru (p1 + 5) of noteBody
+                if (p1 + 6) <= (length of noteBody) then
+                    set tail1 to text (p1 + 6) thru -1 of noteBody
+                else
+                    set tail1 to ""
+                end if
+                if tail1 contains "</div>" then
+                    set p2 to offset of "</div>" in tail1
+                    set head2 to head1 & (text 1 thru (p2 + 5) of tail1)
+                    if (p2 + 6) <= (length of tail1) then
+                        set tail2 to text (p2 + 6) thru -1 of tail1
+                    else
+                        set tail2 to ""
+                    end if
+                    set noteBody to head2 & divider & tail2
+                else
+                    set noteBody to head1 & divider & tail1
+                end if
+            else
+                set noteBody to divider & noteBody
+            end if
+            set body of targetNote to noteBody
+            activate
+            set selection to targetNote
+        end tell
+        """
+        runAppleScript(script)
+    }
+
+    private func runAppleScript(_ script: String) {
+        logFile("runAppleScript script: \n\(script)")
+        let p = Process()
+        p.executableURL = URL(fileURLWithPath: "/usr/bin/osascript")
+        p.arguments = ["-e", script]
+        let errPipe = Pipe()
+        p.standardError = errPipe
+        p.standardOutput = Pipe()
+        do {
+            try p.run()
+            p.waitUntilExit()
+            let errData = errPipe.fileHandleForReading.readDataToEndOfFile()
+            if p.terminationStatus != 0 {
+                let detail = String(data: errData, encoding: .utf8) ?? ""
+                logFile("runAppleScript FAILED (exit \(p.terminationStatus)): \(detail)")
+                let alert = NSAlert()
+                alert.messageText = L10n.t("changelog.error")
+                alert.informativeText = L10n.t("changelog.tip") + "\n\n" + L10n.t("changelog.errorInfo") + "\n\n" + detail
+                alert.addButton(withTitle: "OK")
+                alert.addButton(withTitle: L10n.t("changelog.openSettings"))
+                let resp = alert.runModal()
+                if resp == .alertSecondButtonReturn,
+                   let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Automation") {
+                    NSWorkspace.shared.open(url)
+                }
+            } else {
+                logFile("runAppleScript OK")
+            }
+        } catch {
+            let alert = NSAlert()
+            alert.messageText = L10n.t("changelog.error")
+            alert.informativeText = L10n.t("changelog.errorInfo")
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+        }
+    }
+
+    private func logFile(_ text: String) {
+        let path = "/tmp/pomodoro_notes_log.txt"
+        let line = "[\(Self.dateTimeString())] \(text)\n"
+        if let handle = FileHandle(forWritingAtPath: path) {
+            handle.seekToEndOfFile()
+            handle.write(line.data(using: .utf8) ?? Data())
+            try? handle.close()
+        } else {
+            try? line.write(toFile: path, atomically: true, encoding: .utf8)
+        }
+    }
+
+    private static func dateTimeString() -> String {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return f.string(from: Date())
+    }
+
+    private func runAppleScriptCapture(_ script: String) -> String {
+        let p = Process()
+        p.executableURL = URL(fileURLWithPath: "/usr/bin/osascript")
+        p.arguments = ["-e", script]
+        let outPipe = Pipe()
+        let errPipe = Pipe()
+        p.standardOutput = outPipe
+        p.standardError = errPipe
+        do {
+            try p.run()
+            p.waitUntilExit()
+            let outData = outPipe.fileHandleForReading.readDataToEndOfFile()
+            let errData = errPipe.fileHandleForReading.readDataToEndOfFile()
+            var result = String(data: outData, encoding: .utf8) ?? ""
+            if p.terminationStatus != 0 {
+                result += "EXIT:\(p.terminationStatus) " + (String(data: errData, encoding: .utf8) ?? "")
+            }
+            logFile("runAppleScriptCapture result: \(result)")
+            return result
+        } catch {
+            return "RUN ERROR: \(error.localizedDescription)"
+        }
+    }
+
+    private func runNotesDiagnostic() {
+        let script = """
+        set results to ""
+        tell application "Notes"
+            set folderName to "🍅 Pomodoro"
+            if not (exists folder folderName) then
+                make new folder with properties {name:folderName}
+            end if
+            set targetFolder to folder folderName
+            set noteName to "DIAG"
+            if (count of (notes of targetFolder whose name is noteName)) = 0 then
+                make new note at targetFolder with properties {name:noteName, body:"<div>diag</div>"}
+            end if
+            set targetNote to first note of targetFolder whose name is noteName
+            set nid to id of targetNote
+            set results to results & "NID: " & nid & linefeed
+            try
+                set theNote to note id nid
+                set results to results & "A NOTE_ID_ACCESSOR: ok " & (name of theNote) & linefeed
+            on error ea
+                set results to results & "A NOTE_ID_ACCESSOR: " & ea & linefeed
+            end try
+            try
+                set selection to targetNote
+                set results to results & "B SELECTION_SET: ok" & linefeed
+                delay 1
+                set selRef to selection
+                set results to results & "B SELECTION_AFTER: " & ((id of selRef) as text) & linefeed
+            on error eb
+                set results to results & "B SELECTION_SET: " & eb & linefeed
+            end try
+            try
+                set selection to {targetNote}
+                set results to results & "C SELECTION_SET_LIST: ok" & linefeed
+            on error ec
+                set results to results & "C SELECTION_SET_LIST: " & ec & linefeed
+            end try
+            activate
+            return results
+        end tell
+        """
+        let out = runAppleScriptCapture(script)
+        let path = "/tmp/pomodoro_notes_diag.txt"
+        try? out.write(toFile: path, atomically: true, encoding: .utf8)
+        let alert = NSAlert()
+        alert.messageText = "Notes diagnostic"
+        alert.informativeText = out
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
+    }
     // MARK: - Autostart i GitHub
 
     private var isLaunchAtLoginEnabled: Bool {
@@ -1679,6 +1908,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         return workMinutes
     }
 
+    private var focusTask: Task? {
+        guard let id = focusTaskID else { return nil }
+        return tasks.first { $0.id == id }
+    }
+
     private var focusTaskName: String {
         if let id = focusTaskID, let t = tasks.first(where: { $0.id == id }) {
             return t.name
@@ -1871,6 +2105,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         pomodoroCountItem.title = L10n.t("progress.count", completedPomodoros)
         startPauseItem.title = isRunning ? L10n.t("timer.pause") : (accumulated > 0 ? L10n.t("timer.resume") : L10n.t("timer.start"))
         skipBreakItem.isHidden = (phase == .work)
+        changelogItem.isEnabled = (focusTaskID != nil)
         updatePulse()
     }
 
