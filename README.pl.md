@@ -12,6 +12,7 @@ w pasku menu.
 ## Funkcje
 
 - 🍅 **Timer w pasku menu** — odlicza w dół od końca sesji (np. `🍅 24:59`); pomidor **delikatnie pulsuje**, gdy timer działa, a przy pauzie pokazuje **⏸**
+- 🖼️ **Karta statusu** — zaokrąglona, wyśrodkowana karta na górze menu pokazuje Skupienie / Zostało / Minęło / Pomodoro oraz przycisk 📝 Pokaż changelog
 - 📊 **Okno statystyk** — osobne okno z przełącznikiem **Dzień / Tydzień / Miesiąc** i listą zadań z czasem (każda ukończona sesja jest zapisywana)
 - 📝 **Changelog (Apple Notes)** — „📝 Pokaż changelog” w menu otwiera i zaznacza notatkę aktywnego zadania w Notatkach (folder „🍅 Pomodoro”) i dopisuje pogrubiony **separator z datą i godziną** (---- 15.08.2026 22:40) przy każdym otwarciu; jedna notatka na zadanie, edycja w Notatkach (wymagane jednorazowe zezwolenie Automatyzacja)
 - ✅ **Zadania z własnym czasem** — nazwa, minuty i opcjonalny **opis / notatka**
@@ -83,7 +84,7 @@ rozpakuj i przeciągnij `PomodoroBar.app` do folderu Aplikacje.
 
 ```bash
 ./build.sh
-# tworzy PomodoroBar.app oraz dist/PomodoroBar-v1.4.0.zip
+# tworzy PomodoroBar.app oraz dist/PomodoroBar-v1.5.0.zip
 ```
 
 ## Obsługa
@@ -104,7 +105,7 @@ Kliknij ikonę 🍅 w pasku menu:
 | 📅 **Codzienna rutyna** | Zadania rutyny, oddzielone belkami. Niezrobione: **pogrubione na czerwono TODO**. Zrobione: **zielone ✅** (automatycznie po ¼ czasu). Klik = focus zadania. Reset co dzień |
 | ⚙️ **Ustawienia** | Czas pracy / przerw, **język**, 🚀 **Uruchamiaj przy logowaniu**, 🔔 **Dźwięki na koniec sesji** |
 | 📋 **Zadania** | Wszystkie zadania — klik = focus (✓). Zarządzanie na dole: „➕ Dodaj zadanie…", „✏️ Edytuj wybrane…", „🗑 Usuń wybrane…" |
-| 🍅 **Pomodoro Bar · v1.4.0** | Klik = otwarcie repozytorium GitHub |
+| 🍅 **Pomodoro Bar · v1.5.0** | Klik = otwarcie repozytorium GitHub |
 
 
 ### Szybkie zadanie

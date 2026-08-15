@@ -75,7 +75,7 @@ struct L10n {
             "stats.taskColumn": "Zadanie",
             "stats.timeColumn": "Czas",
             "settings.sounds": "🔔 Dźwięki na koniec sesji",
-            "info": "🍅 Pomodoro Bar · v1.4.0",
+            "info": "🍅 Pomodoro Bar · v1.5.0",
             "menu.quit": "Zakończ",
             "dialog.addTitle": "Nowe zadanie",
             "dialog.editTitle": "Edytuj zadanie",
@@ -168,7 +168,7 @@ struct L10n {
             "stats.taskColumn": "Task",
             "stats.timeColumn": "Time",
             "settings.sounds": "🔔 Sound at session end",
-            "info": "🍅 Pomodoro Bar · v1.4.0",
+            "info": "🍅 Pomodoro Bar · v1.5.0",
             "menu.quit": "Quit",
             "dialog.addTitle": "New task",
             "dialog.editTitle": "Edit task",
@@ -261,7 +261,7 @@ struct L10n {
             "stats.taskColumn": "Tarea",
             "stats.timeColumn": "Tiempo",
             "settings.sounds": "🔔 Sonido al terminar la sesión",
-            "info": "🍅 Pomodoro Bar · v1.4.0",
+            "info": "🍅 Pomodoro Bar · v1.5.0",
             "menu.quit": "Salir",
             "dialog.addTitle": "Nueva tarea",
             "dialog.editTitle": "Editar tarea",
@@ -354,7 +354,7 @@ struct L10n {
             "stats.taskColumn": "Tâche",
             "stats.timeColumn": "Temps",
             "settings.sounds": "🔔 Son à la fin de la session",
-            "info": "🍅 Pomodoro Bar · v1.4.0",
+            "info": "🍅 Pomodoro Bar · v1.5.0",
             "menu.quit": "Quitter",
             "dialog.addTitle": "Nouvelle tâche",
             "dialog.editTitle": "Modifier la tâche",
@@ -447,7 +447,7 @@ struct L10n {
             "stats.taskColumn": "Attività",
             "stats.timeColumn": "Tempo",
             "settings.sounds": "🔔 Suono a fine sessione",
-            "info": "🍅 Pomodoro Bar · v1.4.0",
+            "info": "🍅 Pomodoro Bar · v1.5.0",
             "menu.quit": "Esci",
             "dialog.addTitle": "Nuova attività",
             "dialog.editTitle": "Modifica attività",
@@ -540,7 +540,7 @@ struct L10n {
             "stats.taskColumn": "المهمة",
             "stats.timeColumn": "الوقت",
             "settings.sounds": "🔔 صوت عند انتهاء الجلسة",
-            "info": "🍅 بومودورو بار · v1.4.0",
+            "info": "🍅 بومودورو بار · v1.5.0",
             "menu.quit": "إنهاء",
             "dialog.addTitle": "مهمة جديدة",
             "dialog.editTitle": "تعديل المهمة",
@@ -701,11 +701,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
     // UI references
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let menu = NSMenu()
-    private var headerItem: NSMenuItem!
-    private var progressItem: NSMenuItem!
-    private var elapsedItem: NSMenuItem!
-    private var pomodoroCountItem: NSMenuItem!
-    private var changelogItem: NSMenuItem!
+    private var statusBox: NSView!
+    private var focusLabel: NSTextField!
+    private var remainingLabel: NSTextField!
+    private var elapsedLabel: NSTextField!
+    private var countLabel: NSTextField!
+    private var changelogButton: NSButton!
     private var startPauseItem: NSMenuItem!
     private var stopItem: NSMenuItem!
     private var skipBreakItem: NSMenuItem!
@@ -758,29 +759,62 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         menu.delegate = self
     }
 
+    private func makeStatusView() -> NSView {
+        let container = NSView(frame: NSRect(x: 0, y: 0, width: 310, height: 122))
+        let box = NSView(frame: NSRect(x: 23, y: 0, width: 264, height: 122))
+        box.wantsLayer = true
+        box.layer?.cornerRadius = 10
+        box.layer?.masksToBounds = true
+        box.layer?.backgroundColor = NSColor.systemGray.withAlphaComponent(0.09).cgColor
+        box.layer?.borderWidth = 1
+        box.layer?.borderColor = NSColor.systemGray.withAlphaComponent(0.28).cgColor
+
+        focusLabel = NSTextField(labelWithString: "…")
+        focusLabel.frame = NSRect(x: 12, y: 96, width: 240, height: 18)
+        focusLabel.font = .boldSystemFont(ofSize: 13)
+        box.addSubview(focusLabel)
+
+        remainingLabel = NSTextField(labelWithString: "…")
+        remainingLabel.frame = NSRect(x: 12, y: 72, width: 240, height: 16)
+        remainingLabel.font = .systemFont(ofSize: 12)
+        remainingLabel.textColor = .secondaryLabelColor
+        box.addSubview(remainingLabel)
+
+        elapsedLabel = NSTextField(labelWithString: "…")
+        elapsedLabel.frame = NSRect(x: 12, y: 50, width: 240, height: 16)
+        elapsedLabel.font = .systemFont(ofSize: 12)
+        elapsedLabel.textColor = .secondaryLabelColor
+        box.addSubview(elapsedLabel)
+
+        countLabel = NSTextField(labelWithString: "…")
+        countLabel.frame = NSRect(x: 12, y: 28, width: 240, height: 16)
+        countLabel.font = .systemFont(ofSize: 12)
+        countLabel.textColor = .secondaryLabelColor
+        box.addSubview(countLabel)
+
+        changelogButton = NSButton(title: "", target: self, action: #selector(openNotesChangelog))
+        changelogButton.isBordered = false
+        changelogButton.frame = NSRect(x: 10, y: 4, width: 244, height: 20)
+        changelogButton.alignment = .left
+        let attrs: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: 12),
+            .foregroundColor: NSColor.systemBlue
+        ]
+        changelogButton.attributedTitle = NSAttributedString(string: L10n.t("changelog.show"), attributes: attrs)
+        changelogButton.isEnabled = false
+        box.addSubview(changelogButton)
+
+        container.addSubview(box)
+        statusBox = box
+        return container
+    }
+
     private func setupMenu() {
         menu.removeAllItems()
 
-        headerItem = NSMenuItem(title: "…", action: nil, keyEquivalent: "")
-        headerItem.isEnabled = false
-        menu.addItem(headerItem)
-
-        progressItem = NSMenuItem(title: "…", action: nil, keyEquivalent: "")
-        progressItem.isEnabled = false
-        menu.addItem(progressItem)
-
-        elapsedItem = NSMenuItem(title: "…", action: nil, keyEquivalent: "")
-        elapsedItem.isEnabled = false
-        menu.addItem(elapsedItem)
-
-        pomodoroCountItem = NSMenuItem(title: "…", action: nil, keyEquivalent: "")
-        pomodoroCountItem.isEnabled = false
-        menu.addItem(pomodoroCountItem)
-
-        changelogItem = NSMenuItem(title: L10n.t("changelog.show"), action: #selector(openNotesChangelog), keyEquivalent: "")
-        changelogItem.target = self
-        changelogItem.isEnabled = false
-        menu.addItem(changelogItem)
+        let statusMenuItem = NSMenuItem()
+        statusMenuItem.view = makeStatusView()
+        menu.addItem(statusMenuItem)
 
         menu.addItem(.separator())
 
@@ -1266,6 +1300,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         end tell
         """
         runAppleScript(script)
+        menu.cancelTracking()
     }
 
     private func runAppleScript(_ script: String) {
@@ -2096,16 +2131,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
             if let id = focusTaskID, let task = tasks.first(where: { $0.id == id }), task.sessionLimit > 0 {
                 headerTitle += L10n.t("focus.sessions", task.completedSessions, task.sessionLimit)
             }
-            headerItem.title = headerTitle
+            focusLabel.stringValue = headerTitle
         } else {
-            headerItem.title = L10n.t(phase == .longBreak ? "focus.break.long" : "focus.break.short")
+            focusLabel.stringValue = L10n.t(phase == .longBreak ? "focus.break.long" : "focus.break.short")
         }
-        progressItem.title = L10n.t("progress.remaining", format(remaining), format(dur))
-        elapsedItem.title = L10n.t("progress.elapsed", format(e))
-        pomodoroCountItem.title = L10n.t("progress.count", completedPomodoros)
+        remainingLabel.stringValue = L10n.t("progress.remaining", format(remaining), format(dur))
+        elapsedLabel.stringValue = L10n.t("progress.elapsed", format(e))
+        countLabel.stringValue = L10n.t("progress.count", completedPomodoros)
         startPauseItem.title = isRunning ? L10n.t("timer.pause") : (accumulated > 0 ? L10n.t("timer.resume") : L10n.t("timer.start"))
         skipBreakItem.isHidden = (phase == .work)
-        changelogItem.isEnabled = (focusTaskID != nil)
+        changelogButton.isEnabled = (focusTaskID != nil)
         updatePulse()
     }
 

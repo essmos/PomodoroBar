@@ -12,6 +12,7 @@ the menu bar.
 ## Features
 
 - 🍅 **Menu bar timer** — counts down from the end of your session (e.g. `🍅 24:59`); the tomato **pulses gently** while the timer runs and shows **⏸** when paused
+- 🖼️ **Status card** — a rounded, centered card at the top of the menu shows Focus / Remaining / Elapsed / Pomodoros and the 📝 Show changelog button at a glance
 - 📊 **Statistics window** — opens a dedicated window with a **Day / Week / Month** selector and a per-task list of time spent (every finished session is recorded)
 - 📝 **Changelog (Apple Notes)** — „📝 Show changelog” in the menu opens and selects the focused task's note in the Notes app (folder „🍅 Pomodoro”) and stamps a bold **date/time divider** (---- 15.08.2026 22:40) on every open; one note per task, editing happens in Notes (one-time Automation permission required)
 - ✅ **Tasks with custom durations** — name, minutes and an optional **description / notes**
@@ -83,7 +84,7 @@ page, unzip and move `PomodoroBar.app` to your Applications folder.
 
 ```bash
 ./build.sh
-# produces PomodoroBar.app and dist/PomodoroBar-v1.4.0.zip
+# produces PomodoroBar.app and dist/PomodoroBar-v1.5.0.zip
 ```
 
 ## Usage
@@ -104,7 +105,7 @@ Click the 🍅 icon in the menu bar:
 | 📅 **Daily routine** | Routine tasks, separated by bars. Not done: **bold red TODO**. Done: **green ✅** (auto after ¼ of the time). Click = focus the task. Resets daily |
 | ⚙️ **Settings** | Work / short break / long break durations, **language**, 🚀 **Launch at login**, 🔔 **Sound at session end** |
 | 📋 **Tasks** | All tasks — click to focus (✓). Management at the bottom: `➕ Add task…`, `✏️ Edit selected…`, `🗑 Delete selected…` |
-| 🍅 **Pomodoro Bar · v1.4.0** | Click to open the GitHub repository |
+| 🍅 **Pomodoro Bar · v1.5.0** | Click to open the GitHub repository |
 
 
 ### Quick task
