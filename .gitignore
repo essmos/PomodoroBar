@@ -1,0 +1,7 @@
+.build/
+.gh/
+.gh-config/
+dist/
+PomodoroBar.app/
+AppIcon.icns
+.DS_Store

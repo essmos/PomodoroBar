@@ -1,0 +1,4 @@
+Linia 1: "a \\(b)"
+Linia 2: "🍅 \\(task.name) · \\(task.durationMinutes) min"
+Linia 3: \\(isLong ? "długą" : "krótką")
+Linia 4: tekst bez nic
