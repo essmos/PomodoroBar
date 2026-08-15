@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-VERSION="1.3.0"
+VERSION="1.3.1"
 APP="PomodoroBar.app"
 BIN="$APP/Contents/MacOS/PomodoroBar"
 DIST="dist"
@@ -29,9 +29,9 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
     <key>CFBundleIdentifier</key>
     <string>local.pomodoro-bar</string>
     <key>CFBundleVersion</key>
-    <string>1.3.0</string>
+    <string>1.3.1</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.3.0</string>
+    <string>1.3.1</string>
     <key>CFBundleExecutable</key>
     <string>PomodoroBar</string>
     <key>CFBundlePackageType</key>

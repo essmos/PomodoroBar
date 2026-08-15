@@ -57,7 +57,7 @@ struct L10n {
             "settings.longBreak": "Długa przerwa",
             "settings.language": "🌐 Język",
             "settings.sounds": "🔔 Dźwięki na koniec sesji",
-            "info": "🍅 Pomodoro Bar · v1.3",
+            "info": "🍅 Pomodoro Bar · v1.3.1",
             "menu.quit": "Zakończ",
             "dialog.addTitle": "Nowe zadanie",
             "dialog.editTitle": "Edytuj zadanie",
@@ -123,7 +123,7 @@ struct L10n {
             "settings.longBreak": "Long break",
             "settings.language": "🌐 Language",
             "settings.sounds": "🔔 Sound at session end",
-            "info": "🍅 Pomodoro Bar · v1.3",
+            "info": "🍅 Pomodoro Bar · v1.3.1",
             "menu.quit": "Quit",
             "dialog.addTitle": "New task",
             "dialog.editTitle": "Edit task",
@@ -189,7 +189,7 @@ struct L10n {
             "settings.longBreak": "Descanso largo",
             "settings.language": "🌐 Idioma",
             "settings.sounds": "🔔 Sonido al terminar la sesión",
-            "info": "🍅 Pomodoro Bar · v1.3",
+            "info": "🍅 Pomodoro Bar · v1.3.1",
             "menu.quit": "Salir",
             "dialog.addTitle": "Nueva tarea",
             "dialog.editTitle": "Editar tarea",
@@ -255,7 +255,7 @@ struct L10n {
             "settings.longBreak": "Pause longue",
             "settings.language": "🌐 Langue",
             "settings.sounds": "🔔 Son à la fin de la session",
-            "info": "🍅 Pomodoro Bar · v1.3",
+            "info": "🍅 Pomodoro Bar · v1.3.1",
             "menu.quit": "Quitter",
             "dialog.addTitle": "Nouvelle tâche",
             "dialog.editTitle": "Modifier la tâche",
@@ -321,7 +321,7 @@ struct L10n {
             "settings.longBreak": "Pausa lunga",
             "settings.language": "🌐 Lingua",
             "settings.sounds": "🔔 Suono a fine sessione",
-            "info": "🍅 Pomodoro Bar · v1.3",
+            "info": "🍅 Pomodoro Bar · v1.3.1",
             "menu.quit": "Esci",
             "dialog.addTitle": "Nuova attività",
             "dialog.editTitle": "Modifica attività",
@@ -387,7 +387,7 @@ struct L10n {
             "settings.longBreak": "استراحة طويلة",
             "settings.language": "🌐 اللغة",
             "settings.sounds": "🔔 صوت عند انتهاء الجلسة",
-            "info": "🍅 بومودورو بار · v1.3",
+            "info": "🍅 بومودورو بار · v1.3.1",
             "menu.quit": "إنهاء",
             "dialog.addTitle": "مهمة جديدة",
             "dialog.editTitle": "تعديل المهمة",
@@ -515,6 +515,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var accumulated: TimeInterval = 0
     private var breakOverrideMinutes = 0
     private var ticker: Timer?
+    private var pulseTimer: Timer?
 
     // UI references
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -1380,6 +1381,47 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         RunLoop.main.add(t, forMode: .common)
     }
 
+    // MARK: - Delikatne pulsowanie pomidora
+
+    private func updatePulse() {
+        if isRunning {
+            if pulseTimer == nil {
+                startPulse()
+            }
+        } else {
+            stopPulse()
+        }
+    }
+
+    private func startPulse() {
+        let t = Timer(timeInterval: 3.0, repeats: true) { [weak self] _ in
+            self?.pulseOnce()
+        }
+        pulseTimer = t
+        RunLoop.main.add(t, forMode: .common)
+    }
+
+    private func stopPulse() {
+        pulseTimer?.invalidate()
+        pulseTimer = nil
+        statusItem.button?.alphaValue = 1.0
+    }
+
+    private func pulseOnce() {
+        guard let button = statusItem.button else { return }
+        NSAnimationContext.runAnimationGroup({ ctx in
+            ctx.duration = 0.7
+            ctx.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            button.animator().alphaValue = 0.75
+        }, completionHandler: {
+            NSAnimationContext.runAnimationGroup({ ctx in
+                ctx.duration = 0.9
+                ctx.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+                button.animator().alphaValue = 1.0
+            }, completionHandler: nil)
+        })
+    }
+
     private func tick() {
         guard isRunning else { return }
         markRoutineDoneIfDue()
@@ -1417,8 +1459,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         let dur = sessionDuration
         let remaining = max(0, dur - e)
         let emoji = (phase == .work) ? "🍅" : "☕"
+        let pauseMark = (!isRunning && accumulated > 0) ? "⏸️" : ""
 
-        statusItem.button?.title = "\(emoji) \(format(remaining))"
+        statusItem.button?.title = "\(emoji)\(pauseMark) \(format(remaining))"
 
         if phase == .work {
             headerItem.title = L10n.t("focus.work", focusTaskName, focusTaskMinutes)
@@ -1430,6 +1473,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         pomodoroCountItem.title = L10n.t("progress.count", completedPomodoros)
         startPauseItem.title = isRunning ? L10n.t("timer.pause") : (accumulated > 0 ? L10n.t("timer.resume") : L10n.t("timer.start"))
         skipBreakItem.isHidden = (phase == .work)
+        updatePulse()
     }
 
     // MARK: - Notifications
