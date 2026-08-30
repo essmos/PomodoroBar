@@ -728,6 +728,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
     private var recentHeaderItem: NSMenuItem?
     private var recentItems: [NSMenuItem] = []
     private var infoPanel: NSPanel?
+    private var infoPanelTaskID: UUID?
     private var quickTaskItem: NSMenuItem!
     private var quickNameField: NSTextField?
     private var quickMinutesField: NSTextField?
@@ -931,12 +932,29 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
                 } else if task.sessionLimit > 0 {
                     itemTitle += L10n.t("focus.sessions", task.completedSessions, task.sessionLimit)
                 }
-                let item = NSMenuItem(title: itemTitle,
-                                      action: #selector(focusTask(_:)), keyEquivalent: "")
-                item.target = self
+
+                let item = NSMenuItem(title: itemTitle, action: nil, keyEquivalent: "")
                 item.representedObject = task.id
                 item.toolTip = (task.note?.isEmpty == false) ? task.note : nil
                 item.state = (task.id == focusTaskID) ? .on : .off
+
+                let sub = NSMenu()
+                let focusItem = NSMenuItem(title: L10n.t("routine.focus"), action: #selector(focusTask(_:)), keyEquivalent: "")
+                focusItem.target = self
+                focusItem.representedObject = task.id
+                sub.addItem(focusItem)
+
+                let editItem = NSMenuItem(title: L10n.t("tasks.edit"), action: #selector(editTaskByID(_:)), keyEquivalent: "")
+                editItem.target = self
+                editItem.representedObject = task.id
+                sub.addItem(editItem)
+
+                let deleteItem = NSMenuItem(title: L10n.t("routine.delete"), action: #selector(deleteTaskByID(_:)), keyEquivalent: "")
+                deleteItem.target = self
+                deleteItem.representedObject = task.id
+                sub.addItem(deleteItem)
+
+                item.submenu = sub
                 tasksSubmenu.addItem(item)
             }
         }
@@ -944,16 +962,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         let addItem = NSMenuItem(title: L10n.t("tasks.add"), action: #selector(addTask), keyEquivalent: "")
         addItem.target = self
         tasksSubmenu.addItem(addItem)
-
-        editTaskItem = NSMenuItem(title: L10n.t("tasks.edit"), action: #selector(editFocusTask), keyEquivalent: "")
-        editTaskItem.target = self
-        editTaskItem.isEnabled = !tasks.isEmpty
-        tasksSubmenu.addItem(editTaskItem)
-
-        deleteTaskItem = NSMenuItem(title: L10n.t("tasks.delete"), action: #selector(deleteFocusTask), keyEquivalent: "")
-        deleteTaskItem.target = self
-        deleteTaskItem.isEnabled = !tasks.isEmpty
-        tasksSubmenu.addItem(deleteTaskItem)
     }
 
     private func buildDurationMenus() {
@@ -1265,34 +1273,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
             set targetFolder to folder folderName
             set noteName to "\(name)"
             if (count of (notes of targetFolder whose name is noteName)) = 0 then
-                make new note at targetFolder with properties {name:noteName, body:"<div><b>Changelog:</b> \(name)</div>"}
+                make new note at targetFolder with properties {name:noteName, body:"\(name)"}
             end if
             set targetNote to first note of targetFolder whose name is noteName
             set stamp to (do shell script "date '+%d.%m.%Y %H:%M'")
-            set divider to "<div><b>---- " & stamp & "</b></div>"
+            set divider to "---- " & stamp
             set noteBody to body of targetNote
-            if noteBody contains "</div>" then
-                set p1 to offset of "</div>" in noteBody
-                set head1 to text 1 thru (p1 + 5) of noteBody
-                if (p1 + 6) <= (length of noteBody) then
-                    set tail1 to text (p1 + 6) thru -1 of noteBody
-                else
-                    set tail1 to ""
-                end if
-                if tail1 contains "</div>" then
-                    set p2 to offset of "</div>" in tail1
-                    set head2 to head1 & (text 1 thru (p2 + 5) of tail1)
-                    if (p2 + 6) <= (length of tail1) then
-                        set tail2 to text (p2 + 6) thru -1 of tail1
-                    else
-                        set tail2 to ""
-                    end if
-                    set noteBody to head2 & divider & tail2
-                else
-                    set noteBody to head1 & divider & tail1
-                end if
+            set titleEnd to offset of linefeed in noteBody
+            if titleEnd > 0 then
+                set noteBody to (text 1 thru titleEnd of noteBody) & divider & linefeed & linefeed & (text (titleEnd + 1) thru -1 of noteBody)
             else
-                set noteBody to divider & noteBody
+                set noteBody to noteBody & linefeed & divider & linefeed & linefeed
             end if
             set body of targetNote to noteBody
             activate
@@ -1639,6 +1630,36 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         }
     }
 
+    @objc private func editTaskByID(_ sender: NSMenuItem) {
+        guard let id = sender.representedObject as? UUID else { return }
+        focusTaskID = id
+        saveTasks()
+        editFocusTask()
+    }
+
+    @objc private func deleteTaskByID(_ sender: NSMenuItem) {
+        guard let id = sender.representedObject as? UUID,
+              let task = tasks.first(where: { $0.id == id }) else { return }
+        let alert = NSAlert()
+        alert.messageText = L10n.t("dialog.deleteTitle", task.name)
+        alert.informativeText = L10n.t("dialog.deleteInfo")
+        alert.addButton(withTitle: L10n.t("dialog.deleteConfirm"))
+        alert.addButton(withTitle: L10n.t("dialog.cancel"))
+        guard alert.runModal() == .alertFirstButtonReturn else { return }
+        tasks.removeAll { $0.id == id }
+        recentTaskIDs.removeAll { $0 == id }
+        defaults.set(recentTaskIDs.map { $0.uuidString }, forKey: recentKey)
+        if focusTaskID == id {
+            focusTaskID = tasks.first?.id
+            stopSession()
+        }
+        saveTasks()
+        buildTasksMenu()
+        rebuildRoutineSection()
+        rebuildRecentSection()
+        refreshStatus()
+    }
+
     @objc private func deleteFocusTask() {
         guard let id = focusTaskID, let task = tasks.first(where: { $0.id == id }) else { return }
         let alert = NSAlert()
@@ -1689,25 +1710,30 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         panel.becomesKeyOnlyIfNeeded = true
         panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
 
-        let content = NSView(frame: NSRect(x: 0, y: 0, width: 380, height: 200))
-        let scroll = NSScrollView(frame: NSRect(x: 16, y: 12, width: 348, height: 168))
+        let content = NSView(frame: NSRect(x: 0, y: 0, width: 380, height: 272))
+
+        let scroll = NSTextView.scrollableTextView()
+        scroll.frame = NSRect(x: 16, y: 52, width: 348, height: 204)
         scroll.hasVerticalScroller = true
-        scroll.borderType = .noBorder
         scroll.autohidesScrollers = true
-        let contentSize = scroll.contentSize
-        let textView = NSTextView(frame: NSRect(origin: .zero, size: contentSize))
-        textView.minSize = NSSize(width: 0, height: contentSize.height)
-        textView.maxSize = NSSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
-        textView.isVerticallyResizable = true
-        textView.isHorizontallyResizable = false
-        textView.autoresizingMask = [.width]
+        scroll.drawsBackground = false
+        let textView = scroll.documentView as! NSTextView
         textView.isEditable = false
         textView.isSelectable = true
-        textView.isRichText = false
+        textView.drawsBackground = false
         textView.font = .systemFont(ofSize: 13)
+        textView.textContainerInset = NSSize(width: 6, height: 60)
         textView.string = task.note ?? ""
-        scroll.documentView = textView
         content.addSubview(scroll)
+
+        let startButton = NSButton(title: "▶ \(L10n.t("timer.start"))",
+                                   target: self, action: #selector(startFromInfoPanel(_:)))
+        startButton.bezelStyle = .rounded
+        startButton.controlSize = .regular
+        startButton.keyEquivalent = "\r"
+        startButton.frame = NSRect(x: 16, y: 12, width: 348, height: 32)
+        content.addSubview(startButton)
+
         panel.contentView = content
 
         if let screen = NSScreen.main {
@@ -1717,12 +1743,36 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSTabl
         }
         panel.orderFrontRegardless()
         infoPanel = panel
+        infoPanelTaskID = task.id
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 12) { [weak self, weak panel] in
             guard let panel, panel.isVisible else { return }
             panel.close()
-            if self?.infoPanel === panel { self?.infoPanel = nil }
+            if self?.infoPanel === panel {
+                self?.infoPanel = nil
+                self?.infoPanelTaskID = nil
+            }
         }
+    }
+
+    @objc private func startFromInfoPanel(_ sender: NSButton) {
+        guard let id = infoPanelTaskID else { return }
+        infoPanel?.close()
+        infoPanel = nil
+        infoPanelTaskID = nil
+
+        focusTaskID = id
+        saveTasks()
+        touchRecent(id)
+        buildTasksMenu()
+        rebuildRoutineSection()
+        refreshStatus()
+
+        if phase != .work { phase = .work }
+        accumulated = 0
+        start()
+        refreshStatus()
+        menu.cancelTracking()
     }
 
     private func presentTaskDialog(title: String, confirm: String, initialName: String?, initialMinutes: Int,
